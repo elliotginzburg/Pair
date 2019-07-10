@@ -11,7 +11,33 @@
         <p> Last updated on <%= user.lastUpdate %> </p>
         <hr>
 
+
         <form method="post" action="/updateProfile">
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %>  >Politics</label>
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="food">Food</label>
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="movies">Movies</label>
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="sports">Sports</label>
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="travel">Travel</label>
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="diy">DIY</label>
+          </div>
+
             Age: <input type="number" name="age" value="<%= user.age %>"><br><br>
             Profile Pic URL: <input type="text" name="profilePicURL"
                               value="<%= user.profilePicURL %>"><br><br>

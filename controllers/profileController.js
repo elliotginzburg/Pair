@@ -11,14 +11,18 @@ exports.update = ( req, res ) => {
   .exec()
   .then((p) => {
     console.log("just found a profile")
-    console.dir(p)
+    //console.dir(p)
+    console.log("req.body = ")
+    console.dir(req.body)
     p.age = req.body.age
     p.profilePicURL = req.body.profilePicURL
     p.address = req.body.address
     p.bio = req.body.bio
     p.lastUpdate = new Date()
+    p.politics = (req.body.politics == "on")
     p.save()
      .then( ( profile ) => {
+       console.log(profile.politics)
       res.render( 'profile', {
           profile:profile, title:"Profile"
         } );

@@ -15,12 +15,18 @@ var userSchema = Schema( {
   bio: String,
   lastUpdate: Date,
   userName: String,
-  bio:String,
-  age:String,
-  address:String,
+  Bio:String,
+  Age:String,
+  Address:String,
   zipcode: String,
   city: String,
   state: String,
+  politics: Boolean,
+  food: Boolean,
+  movies: Boolean,
+  sports: Boolean,
+  travel: Boolean,
+  diy: Boolean
 } );
 
 
