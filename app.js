@@ -133,6 +133,9 @@ function isLoggedIn(req, res, next) {
       res.redirect('/login');
     }
 }
+app.get('/home', function(req, res) {
+        res.render('home')
+    });
 
 // we require them to be logged in to see their profile
 app.get('/Jai',function(req, res) {
@@ -140,6 +143,10 @@ app.get('/Jai',function(req, res) {
 app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile')
     });
+
+app.get('/zachpage', function(req, res) {
+          res.render('zachpage')
+});
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
