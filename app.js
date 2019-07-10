@@ -135,6 +135,8 @@ function isLoggedIn(req, res, next) {
 }
 
 // we require them to be logged in to see their profile
+app.get('/Jai',function(req, res) {
+        res.render('Jai')});
 app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile')
     });
@@ -166,6 +168,7 @@ app.get('/', function(req, res, next) {
 });
 
 app.get('/quiz2',quiz2Controller.getAllMovieRatings)
+
 
 
 app.get('/forum',forumPostController.getAllForumPosts)
