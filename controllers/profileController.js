@@ -12,14 +12,14 @@ exports.update = ( req, res ) => {
   .then((p) => {
     console.log("just found a profile")
     console.dir(p)
-    p.Age = req.body.Age
+    p.age = req.body.age
     p.profilePicURL = req.body.profilePicURL
-    p.Address = req.body.Address
-    p.Bio = req.body.Bio
+    p.address = req.body.address
+    p.bio = req.body.bio
     p.lastUpdate = new Date()
     p.save()
      .then( ( profile ) => {
-      res.render( 'showProfile', {
+      res.render( 'profile', {
           profile:profile, title:"Profile"
         } );
      })
@@ -60,7 +60,7 @@ exports.getOneProfile = ( req, res ) => {
   User.findOne({_id:id})
     .exec()
     .then( ( profile ) => {
-      res.render( 'showProfile', {
+      res.render( 'profile', {
         profile:profile, title:"Profile"
       } );
     } )
