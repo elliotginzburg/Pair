@@ -138,6 +138,9 @@ function isLoggedIn(req, res, next) {
 app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile')
     });
+    app.get('/simonpage', function(req, res) {
+            res.render('simonpage',{title: "Simon's Page"})
+        });
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
@@ -148,6 +151,7 @@ app.get('/showProfile/:id', isLoggedIn, profileController.getOneProfile);
 
 
 app.post('/updateProfile',profileController.update)
+
 
 // add page for editProfile and views
 // add router for updateProfile and send browser to /profie
