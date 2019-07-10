@@ -20,8 +20,10 @@ var userSchema = Schema( {
   Address:String,
   zipcode: String,
   city: String,
-  state: String
+  state: String,
 } );
+
+
 
 module.exports = mongoose.model( 'User', userSchema );
 
