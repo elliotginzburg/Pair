@@ -2,17 +2,19 @@
 <%- include('menubar') -%>
     <div class="jumbotron">
         <img src="<%= user.profilePicURL%>" width="400">
-        <hr>
+        <br>
         <p> Welcome <%= user.googlename %><br>
         You are logged in to Pair.
        Email: <%= user.googleemail %>
         </p>
-<hr>
-<p>  Age:<%= user.age %>
-  <br> Address:<%= user.address %> <br>
-  Bio: <%= user.bio %>
+        <br>
+        <p> Age:<%= user.age %> </p> <br>
+        <p> Address:<%= user.address %> </p> <br>
+        <p> Bio: <%= user.bio %> </p> <br>
         <p> Last updated on <%= user.lastUpdate %> </p> <br>
-        <a href="/editProfile">Edit Profile</a>
+        <a href="/editProfile"> Edit Profile </a>
+
+
     </div>
 
 <%- include('bootfooter') -%>
