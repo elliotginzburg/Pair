@@ -1,17 +1,18 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-        <img src="<%= user.profilePicURL%>" width="200">
+        <img src="<%= user.profilePicURL%>" width="400">
         <hr>
-        <p> Welcome <%= user.googlename %>
-            with email <%= user.googleemail %>
-            You are logged in to Pair.
-            <%=user.Age%>
+        <p> Welcome <%= user.googlename %><br>
+        You are logged in to Pair.
+       Email: <%= user.googleemail %>
         </p>
-        <p> <%= user.zipcode %> <%= user.city %> <%= user.state %>
-        <p> Last updated on <%= user.lastUpdate %> </p>
-<a href="/editProfile">edit profile</a>
+<hr>
+<p>  Age:<%= user.age %>
+  <br> Address:<%= user.address %> <br>
+  Bio: <%= user.bio %>
+        <p> Last updated on <%= user.lastUpdate %> </p> <br>
+        <a href="/editProfile">Edit Profile</a>
     </div>
 
 <%- include('bootfooter') -%>

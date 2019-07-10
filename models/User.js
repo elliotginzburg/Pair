@@ -21,6 +21,12 @@ var userSchema = Schema( {
   zipcode: String,
   city: String,
   state: String,
+  politics: Boolean,
+  food: Boolean,
+  movies: Boolean,
+  sports: Boolean,
+  travel: Boolean,
+  diy: Boolean
 } );
 
 
