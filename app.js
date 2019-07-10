@@ -138,8 +138,8 @@ function isLoggedIn(req, res, next) {
 app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile')
     });
-    app.get('/simonpage', function(req, res) {
-            res.render('simonpage',{title: "Simon's Page"})
+    app.get('/simon', function(req, res) {
+            res.render('simon',{title: "Simon's Page"})
         });
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
