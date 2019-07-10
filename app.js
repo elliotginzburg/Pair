@@ -142,20 +142,14 @@ app.get('/Jai',function(req, res) {
         res.render('Jai')
 });
 
-});
 app.get('/simon', function(req, res) {
         res.render('simon',{title: "Simon's Page"})
     });
 
 app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile')
-<<<<<<< HEAD
-    });
-    app.get('/simon', function(req, res) {
-            res.render('simon',{title: "Simon's Page"})
-        });
-=======
 });
+
 
 app.get('/zachpage', function(req, res) {
           res.render('zachpage')
@@ -164,7 +158,6 @@ app.get('/zachpage', function(req, res) {
 app.get('/ahsenpage', function(req, res) {
           res.render('ahsenpage')
 });
->>>>>>> 283c51bf895b3607a410d99619fd3f2ed368f0df
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
