@@ -12,9 +12,10 @@ exports.update = ( req, res ) => {
   .then((p) => {
     console.log("just found a profile")
     console.dir(p)
-    p.userName = req.body.userName
+    p.Age = req.body.Age
     p.profilePicURL = req.body.profilePicURL
-    p.zipcode = req.body.zipcode
+    p.Address = req.body.Address
+    p.Bio = req.body.Bio
     p.lastUpdate = new Date()
     p.save()
      .then( ( profile ) => {

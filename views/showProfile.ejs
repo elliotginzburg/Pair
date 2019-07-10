@@ -1,12 +1,15 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1>YellowCartwheel Profile for <%= profile.userName %></h1>
-        <img src="<%= profile.profilePicURL%>" width="200">
+        <h1>Pair Profile </h1>
+        <%= profile.profilePicURL%>
+        <%= profile.Age%>
+        <%= profile.Address%>
+        <%= profile.Bio%>
         <hr>
         <p> Welcome <%= profile.googlename %>
             with email <%= profile.googleemail %>
-            You are logged in to YellowCartwheel.
+            You are logged in to Pair.<br>
         </p>
         <p> Last updated on <%= profile.lastUpdate %> </p>
     </div>
