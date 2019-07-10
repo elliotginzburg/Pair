@@ -66,7 +66,7 @@ const approvedLogins = ["tjhickey724@gmail.com","csjbs2018@gmail.com"];
 
 // here is where we check on their logged in status
 app.use((req,res,next) => {
-  res.locals.title="YellowCartwheel"
+  res.locals.title="Pair"
   res.locals.loggedIn = false
   if (req.isAuthenticated()){
       console.log("user has been Authenticated")
@@ -188,7 +188,7 @@ app.use(function(req,res,next){
 
 
 app.get('/', function(req, res, next) {
-  res.render('index',{title:"YellowCartwheel"});
+  res.render('index',{title:"Pair"});
 });
 
 app.get('/quiz2',quiz2Controller.getAllMovieRatings)
