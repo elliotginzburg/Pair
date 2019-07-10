@@ -135,14 +135,16 @@ function isLoggedIn(req, res, next) {
 }
 app.get('/home', function(req, res) {
         res.render('home')
-    });
+});
 
 // we require them to be logged in to see their profile
 app.get('/Jai',function(req, res) {
-        res.render('Jai')});
+        res.render('Jai')
+});
+
 app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile')
-    });
+});
 
 app.get('/zachpage', function(req, res) {
           res.render('zachpage')
