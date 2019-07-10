@@ -10,6 +10,7 @@
         </p>
         <p> Last updated on <%= user.lastUpdate %> </p>
         <hr>
+
         <form method="post" action="/updateProfile">
             Age: <input type="number" name="Age" value="<%= user.Age %>"><br><br>
             Profile Pic URL: <input type="text" name="profilePicURL"
