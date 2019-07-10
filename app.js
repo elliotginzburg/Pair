@@ -164,6 +164,10 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
 })
 
+app.get('/Chats',isLoggedIn, (req,res)=>{
+  res.render('Chats')
+})
+
 app.get('/interests', (req,res)=>{
   res.render('interests')
 })

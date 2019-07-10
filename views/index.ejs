@@ -32,7 +32,9 @@
           <font size="+7">Meet People</font>
           </div>
             <div style ="position:relative;top:-150px;">
+              <% if (loggedIn==false) { %>
             <a class="btn btn-lg btn-danger" href="/auth/google"> Login</a>
+            <% }  %>
             </div>
         </div>
       </div>
@@ -44,7 +46,9 @@
           <!--<h1>Interact With Others</h1>-->
             </div>
             <div style ="position:relative;top:-150px;">
+              <% if (loggedIn==false) { %>
             <a class="btn btn-lg btn-danger" href="/auth/google"> Login</a>
+            <% }  %>
               </div>
       </div>
       </div>
@@ -55,7 +59,9 @@
           <font size="+7">Network Socially</font>
           </div>
             <div style ="position:relative;top:-150px;">
+              <% if (loggedIn==false) { %>
             <a class="btn btn-lg btn-danger" href="/auth/google"> Login</a>
+            <% }  %>
             </div>
         </div>
       </div>
