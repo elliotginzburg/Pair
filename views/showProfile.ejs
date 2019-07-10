@@ -3,11 +3,13 @@
     <div class="jumbotron">
         <h1>Pair Profile </h1>
         <%= profile.profilePicURL%>
+        <%= profile.Age%>
+        <%= profile.Address%>
+        <%= profile.Bio%>
         <hr>
         <p> Welcome <%= profile.googlename %>
             with email <%= profile.googleemail %>
             You are logged in to Pair.<br>
-            <%= profile.Age%>
         </p>
         <p> Last updated on <%= profile.lastUpdate %> </p>
     </div>
