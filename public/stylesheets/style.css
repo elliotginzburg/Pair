@@ -12,3 +12,12 @@ img.about-me-pic{
   border-radius: 30px;
   box-shadow: 10px 10px 5px grey;
 }
+
+h5.about-me-text{
+  padding-top: 20px;
+  padding-left: 0px;
+}
+
+div.about-me-pic-div{
+  flex-grow: .2;
+}
