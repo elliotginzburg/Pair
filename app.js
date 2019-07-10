@@ -146,6 +146,10 @@ app.get('/zachpage', function(req, res) {
           res.render('zachpage')
 });
 
+app.get('/ahsenpage', function(req, res) {
+          res.render('ahsenpage')
+});
+
 app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
 })
