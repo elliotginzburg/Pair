@@ -151,13 +151,10 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 
-app.get('/zachpage', function(req, res) {
-          res.render('zachpage')
+app.get('/aboutpages', function(req, res) {
+          res.render('aboutpages')
 });
 
-app.get('/ahsenpage', function(req, res) {
-          res.render('ahsenpage')
-});
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
