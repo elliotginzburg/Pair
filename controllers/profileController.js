@@ -14,15 +14,25 @@ exports.update = ( req, res ) => {
     //console.dir(p)
     console.log("req.body = ")
     console.dir(req.body)
+
+    // take from the form and put into user
     p.age = req.body.age
     p.profilePicURL = req.body.profilePicURL
     p.address = req.body.address
     p.bio = req.body.bio
     p.lastUpdate = new Date()
+
+    // interest attributes
     p.politics = (req.body.politics == "on")
+    p.food = (req.body.food == "on")
+    p.movies = (req.body.movies == "on")
+    p.sports = (req.body.sports == "on")
+    p.travel = (req.body.travel == "on")
+    p.diy = (req.body.diy == "on")
+
+    // save the users info in the user object
     p.save()
      .then( ( profile ) => {
-       console.log(profile.politics)
       res.render( 'profile', {
           profile:profile, title:"Profile"
         } );

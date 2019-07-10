@@ -142,6 +142,10 @@ app.get('/Jai',function(req, res) {
         res.render('Jai')
 });
 
+app.get('/yourpairs',function(req, res) {
+        res.render('yourpairs')
+});
+
 app.get('/simon', function(req, res) {
         res.render('simon',{title: "Simon's Page"})
     });
