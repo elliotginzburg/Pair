@@ -133,6 +133,11 @@ function isLoggedIn(req, res, next) {
       res.redirect('/login');
     }
 }
+app.get('/home', function(req, res) {
+        res.render('home')
+    });
+
+
 
 // we require them to be logged in to see their profile
 app.get('/profile', isLoggedIn, function(req, res) {
