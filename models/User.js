@@ -15,6 +15,9 @@ var userSchema = Schema( {
   bio: String,
   lastUpdate: Date,
   userName: String,
+  Bio:String,
+  Age:String,
+  Address:String,
   zipcode: String,
   city: String,
   state: String
