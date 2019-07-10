@@ -133,11 +133,28 @@ function isLoggedIn(req, res, next) {
       res.redirect('/login');
     }
 }
+app.get('/home', function(req, res) {
+        res.render('home')
+});
 
 // we require them to be logged in to see their profile
+app.get('/Jai',function(req, res) {
+        res.render('Jai')
+});
+
+app.get('/simon', function(req, res) {
+        res.render('simon',{title: "Simon's Page"})
+    });
+
 app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile')
-    });
+});
+
+
+app.get('/aboutpages', function(req, res) {
+          res.render('aboutpages')
+});
+
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
@@ -148,6 +165,7 @@ app.get('/showProfile/:id', isLoggedIn, profileController.getOneProfile);
 
 
 app.post('/updateProfile',profileController.update)
+
 
 // add page for editProfile and views
 // add router for updateProfile and send browser to /profie
@@ -166,6 +184,7 @@ app.get('/', function(req, res, next) {
 });
 
 app.get('/quiz2',quiz2Controller.getAllMovieRatings)
+
 
 
 app.get('/forum',forumPostController.getAllForumPosts)
