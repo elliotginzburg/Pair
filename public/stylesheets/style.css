@@ -33,3 +33,10 @@ img.interest-style{
   padding: 15px;
   padding-top: 30px;
 }
+
+button.accept-or-deny{
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
