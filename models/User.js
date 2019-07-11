@@ -26,8 +26,10 @@ var userSchema = Schema( {
   sports: Boolean,
   travel: Boolean,
   diy: Boolean,
-  // list of forbidden ids
+  //list of forbidden ids
   // forbidden: L Integer
+  //people you have said "chat" to, or hava accepted their request
+  // chatPartners: L Integer
 } );
 
 
