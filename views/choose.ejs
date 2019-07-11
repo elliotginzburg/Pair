@@ -1,128 +1,38 @@
 
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
-<<<<<<< HEAD
-=======
-<!--
-Image Checkbox Bootstrap template for multiple image selection
-https://www.prepbootstrap.com/bootstrap-template/image-checkbox
--->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-<div class="container">
-  <h3>Choose One or More of Your Desired Topics</h3>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
 
-</div><!--
-Image Checkbox Bootstrap template for multiple image selection
-https://www.prepbootstrap.com/bootstrap-template/image-checkbox
--->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-<div class="container">
-  <h3>Choose One or More of Your Desired Topics</h3>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
-  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-    <label class="image-checkbox">
-      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
-      <input type="checkbox" name="image[]" value="" />
-      <i class="fa fa-check hidden"></i>
-    </label>
-  </div>
-
-</div>
-
->>>>>>> 5405c18be617e94f5fd5446c95264211acca0c0a
 <form method="post" action="/updateProfile">
 
 
   <div class="checkbox">
     <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %>  >Politics</label>
-      <label for="checkbox"><img src = "image/politics.jpg"/></label>
+      <label for="checkbox"><img src = "images/politics.jpg"/></label>
   </div>
 
   <div class="checkbox">
     <label><input type="checkbox" name="food" <% if(user.food){ %> checked <%  } %>>Food</label>
-    <label for="food"><img src = "image/food.jpg"/></label>
+    <label for="food"><img src = "images/food.jpg"/></label>
   </div>
 
   <div class="checkbox">
     <label><input type="checkbox" name="movies" <% if(user.movies){ %> checked <%  } %>>Movies</label>
-      <label for="movies"><img src = "image/movies.jpg"/></label>
+      <label for="movies"><img src = "images/movies.jpg"/></label>
   </div>
 
   <div class="checkbox">
     <label><input type="checkbox" name="sports" <% if(user.sports){ %> checked <%  } %>>Sports</label>
-      <label for="sports"><img src = "image/sports.jpg"/></label>
+      <label for="sports"><img src = "images/sports.jpg" width="550" height="300"/></label>
   </div>
 
   <div class="checkbox">
     <label><input type="checkbox" name="travel" <% if(user.travel){ %> checked <%  } %>>Travel</label>
-      <label for="travel"><img src = "image/travel.jpg"/></label>
+      <label for="travel"><img src = "images/travel.jpg"/></label>
   </div>
 
   <div class="checkbox" >
     <label><input type="checkbox" name="diy" <% if(user.diy){ %> checked <%  } %>>DIY</label>
-      <label for="diy"><img src = "image/diy.jpg"/></label>
+      <label for="diy"><img src = "images/diy.jpg"/></label>
   </div>
 
   <input type="submit" class="btn btn-lg btn-primary">
