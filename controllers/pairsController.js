@@ -151,12 +151,6 @@ function getTopFive(users, user){
 
   var topFive = [];
 
-<<<<<<< HEAD
-  for(i = 0; i < 1; i++){
-    console.log(counterArray[i][0]);
-    topFive.push(counterArray[i][0]);
-    console.log(topFive[i]);
-=======
   if(counterArray.length < 5){
     for(i = 0; i < counterArray.length; i++){
       topFive.push(counterArray[i][0]);
@@ -168,7 +162,6 @@ function getTopFive(users, user){
       topFive.push(counterArray[i][0]);
       console.log(topFive[i]);
     }
->>>>>>> 3ac89b6d875a4cab1428d0cb26ea53a0f2b65aea
   }
 
   return topFive;
