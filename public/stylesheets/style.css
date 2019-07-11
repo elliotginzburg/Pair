@@ -45,25 +45,13 @@ img.logo{
   padding-right: 15px;
 }
 
-/*
-  label:before {
-    content: url("https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/unchecked_checkbox.png");
-    position: absolute;
-    z-index: 100;
-  }
-  :checked+label:before {
-    content: url("https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/checked_checkbox.png");
-  }
-  input[type=checkbox] {
-    display: none;
-  }
+a.footerlink{
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+}
 
-  img {
-    width: 150px;
-    height: 150px;
-  }
-  label {
-    margin: 10px;
-  }
-
-*/
+div.footer-class{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
