@@ -15,6 +15,37 @@
 
         <form method="post" action="/updateProfile">
 
+        
+          <div class="checkbox">
+            <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %>  >Politics</label>
+              <label for="checkbox"><img src = "images/politics.jpg"/></label>
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="food" <% if(user.food){ %> checked <%  } %>>Food</label>
+            <label for="food"><img src = "images/food.jpg"/></label>
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="movies" <% if(user.movies){ %> checked <%  } %>>Movies</label>
+              <label for="movies"><img src = "images/movies.jpg"/></label>
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="sports" <% if(user.sports){ %> checked <%  } %>>Sports</label>
+              <label for="sports"><img src = "images/sports.jpg" width="550" height="300"/></label>
+          </div>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="travel" <% if(user.travel){ %> checked <%  } %>>Travel</label>
+              <label for="travel"><img src = "images/travel.jpg"/></label>
+          </div>
+
+          <div class="checkbox" >
+            <label><input type="checkbox" name="diy" <% if(user.diy){ %> checked <%  } %>>DIY</label>
+              <label for="diy"><img src = "images/diy.jpg"/></label>
+          </div>
+
             Age: <input type="number" name="age" value="<%= user.age %>"><br><br>
             Profile Pic URL: <input type="text" name="profilePicURL"
                               value="<%= user.profilePicURL %>"><br><br>
@@ -22,7 +53,7 @@
                          value="<%= user.address %>"><br><br>
             Bio: <input type="text" name="bio"
                          value="<%= user.bio %>"><br><br>
-            <input type="submit" class="btn btn-lg btn-primary">
+            <input type="submit" class="btn btn-primary">
         </form>
 <p>
     </div>
