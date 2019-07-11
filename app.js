@@ -303,3 +303,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// image gallery
+// init the state from the input

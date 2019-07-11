@@ -44,3 +44,26 @@ button.accept-or-deny{
 img.logo{
   padding-right: 15px;
 }
+
+/*
+  label:before {
+    content: url("https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/unchecked_checkbox.png");
+    position: absolute;
+    z-index: 100;
+  }
+  :checked+label:before {
+    content: url("https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/checked_checkbox.png");
+  }
+  input[type=checkbox] {
+    display: none;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+  label {
+    margin: 10px;
+  }
+
+*/
