@@ -1,5 +1,8 @@
+
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
+<<<<<<< HEAD
+=======
 <!--
 Image Checkbox Bootstrap template for multiple image selection
 https://www.prepbootstrap.com/bootstrap-template/image-checkbox
@@ -88,33 +91,47 @@ https://www.prepbootstrap.com/bootstrap-template/image-checkbox
 
 </div>
 
+>>>>>>> 5405c18be617e94f5fd5446c95264211acca0c0a
 <form method="post" action="/updateProfile">
+
 
   <div class="checkbox">
     <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %>  >Politics</label>
+      <label for="checkbox"><img src = "image/politics.jpg"/></label>
   </div>
 
   <div class="checkbox">
     <label><input type="checkbox" name="food" <% if(user.food){ %> checked <%  } %>>Food</label>
+    <label for="food"><img src = "image/food.jpg"/></label>
   </div>
 
   <div class="checkbox">
     <label><input type="checkbox" name="movies" <% if(user.movies){ %> checked <%  } %>>Movies</label>
+      <label for="movies"><img src = "image/movies.jpg"/></label>
   </div>
 
   <div class="checkbox">
     <label><input type="checkbox" name="sports" <% if(user.sports){ %> checked <%  } %>>Sports</label>
+      <label for="sports"><img src = "image/sports.jpg"/></label>
   </div>
 
   <div class="checkbox">
     <label><input type="checkbox" name="travel" <% if(user.travel){ %> checked <%  } %>>Travel</label>
+      <label for="travel"><img src = "image/travel.jpg"/></label>
   </div>
 
   <div class="checkbox" >
     <label><input type="checkbox" name="diy" <% if(user.diy){ %> checked <%  } %>>DIY</label>
+      <label for="diy"><img src = "image/diy.jpg"/></label>
   </div>
 
   <input type="submit" class="btn btn-lg btn-primary">
   </form>
+
+
+
+
+
+
 
 <%- include('bootfooter') -%>
