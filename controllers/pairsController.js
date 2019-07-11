@@ -67,7 +67,8 @@ function getTopFive(users, user){
     // add to all who also like politics
     for(i = 0; i < counterArray.length; i++){
       // check if the user also likes politics
-      if(counterArray[i][0].politics){
+      //console.log(users[counterArray[i][0]].politics)
+      if(users[counterArray[i][0]].politics){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
       }
@@ -77,7 +78,7 @@ function getTopFive(users, user){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
       // check if the user also likes ...
-      if(counterArray[i][0].food){
+      if(users[counterArray[i][0]].food){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
       }
@@ -87,7 +88,7 @@ function getTopFive(users, user){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
       // check if the user also likes ...
-      if(counterArray[i][0].movies){
+      if(users[counterArray[i][0]].movies){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
       }
@@ -97,7 +98,7 @@ function getTopFive(users, user){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
       // check if the user also likes ...
-      if(counterArray[i][0].sports){
+      if(users[counterArray[i][0]].sports){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
       }
@@ -107,7 +108,7 @@ function getTopFive(users, user){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
       // check if the user also likes ...
-      if(counterArray[i][0].travel){
+      if(users[counterArray[i][0]].travel){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
       }
@@ -117,7 +118,7 @@ function getTopFive(users, user){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
       // check if the user also likes ...
-      if(counterArray[i][0].diy){
+      if(users[counterArray[i][0]].diy){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
       }
@@ -153,14 +154,20 @@ function getTopFive(users, user){
 
   if(counterArray.length < 5){
     for(i = 0; i < counterArray.length; i++){
-      topFive.push(counterArray[i][0]);
+
+      if(counterArray[i][1] != 0){
+        topFive.push(counterArray[i][0]);
+      }
+
     }
   }
   else{
     for(i = 0; i < 5; i++){
-      console.log(counterArray[i][0]);
-      topFive.push(counterArray[i][0]);
-      console.log(topFive[i]);
+
+      if(counterArray[i][1] != 0){
+        topFive.push(counterArray[i][0]);
+      }
+
     }
   }
 
