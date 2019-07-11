@@ -44,6 +44,10 @@ function getTopFive(users, user){
 
   for(i = 0; i < users.length; i++) {
 
+    if(user.googlename != users[i].googlename){
+      counterArray.push([ i , 0 ]);
+    }
+
     // turn flag to false if it hits a forbidden id
     /* var flag = true;
 
@@ -56,7 +60,6 @@ function getTopFive(users, user){
       // initialize 2d array: [ id , 0 (will be added to later)]
       counterArray.push([ i , 0 ]);
     } */
-    counterArray.push([ i , 0 ]);
   }
 
   // ----------------------- Step 2 --------------------------//
