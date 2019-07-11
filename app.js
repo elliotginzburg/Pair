@@ -164,7 +164,7 @@ app.get('/aboutpages', function(req, res) {
           res.render('aboutpages')
 });
 
-// CHAT CHANGE 
+// CHAT CHANGE
 app.get('/chat',(req,res,next)=>{
   res.render('chat',{title:"ChatDemo"});
 })
@@ -399,3 +399,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// image gallery
+// init the state from the input
