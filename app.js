@@ -166,7 +166,7 @@ app.get('/aboutpages', function(req, res) {
           res.render('aboutpages')
 });
 
-// CHAT CHANGE 
+// CHAT CHANGE
 app.get('/chat',(req,res,next)=>{
   res.render('chat',{title:"ChatDemo"});
 })
