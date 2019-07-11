@@ -12,14 +12,12 @@
         <p> Address:<%= user.address %> </p> <br>
         <p> Bio: <%= user.bio %> </p> <br>
         <p> Last updated on <%= user.lastUpdate %> </p> <br>
-        <p> Interests: <% if(user.politics){ %> Politics <% } %> 
+        <p> Interests: <% if(user.politics){ %> Politics <% } %>
                        <% if(user.food){ %> Food <% } %>
                        <% if(user.movies){ %> Movies <% } %>
                        <% if(user.sports){ %> Sports <% } %>
                        <% if(user.travel){ %> Travel <% } %>
                        <% if(user.diy){ %> DIY <% } %> </p>
-
-
         <a href="/editProfile"> Edit Profile </a>
     </div>
 
