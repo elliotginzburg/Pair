@@ -136,6 +136,11 @@ function isLoggedIn(req, res, next) {
 app.get('/home', function(req, res) {
         res.render('home')
 });
+app.get('/choose', function(req, res) {
+        res.render('choose')
+});
+
+
 
 // we require them to be logged in to see their profile
 app.get('/Jai',function(req, res) {
