@@ -6,18 +6,21 @@
         <p> Welcome <%= user.googlename %><br>
         You are logged in to Pair. <br>
         Email: <%= user.googleemail %>
+
         </p>
-        <br>
+         <p> Last updated on <%= user.lastUpdate %> </p>
+        <hr>
         <p> Age:<%= user.age %> </p> <br>
         <p> Address:<%= user.address %> </p> <br>
         <p> Bio: <%= user.bio %> </p> <br>
-        <p> Last updated on <%= user.lastUpdate %> </p> <br>
-        <p> Interests: <% if(user.politics){ %> Politics <% } %>
-                       <% if(user.food){ %> Food <% } %>
-                       <% if(user.movies){ %> Movies <% } %>
-                       <% if(user.sports){ %> Sports <% } %>
-                       <% if(user.travel){ %> Travel <% } %>
-                       <% if(user.diy){ %> DIY <% } %> </p>
+
+        <p> Interests: <% if(user.politics){ %> Politics, <% } %>
+                       <% if(user.food){ %> Food, <% } %>
+                       <% if(user.movies){ %> Movies, <% } %>
+                       <% if(user.sports){ %> Sports, <% } %>
+                       <% if(user.travel){ %> Travel, <% } %>
+                       <% if(user.diy){ %> DIY, <% } %> </p>
+<br>
         <a href="/editProfile"> Edit Profile </a>
     </div>
 
