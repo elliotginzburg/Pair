@@ -25,7 +25,9 @@ var userSchema = Schema( {
   movies: Boolean,
   sports: Boolean,
   travel: Boolean,
-  diy: Boolean
+  diy: Boolean,
+  // list of forbidden ids
+  // forbidden: L Integer
 } );
 
 

@@ -246,6 +246,123 @@ function processFormData(req,res,next){
 }
 
 
+/*
+Step 1: Initialize array for all except forbidden
+Step 2: Count all instances of duplicate interests
+Step 3: Sort by decending order - number of similar interests
+Step 4: Return only the top 5
+*/
+
+/* delete this for code
+function getTopFive{
+
+  // ----------------------- Step 1 --------------------------//
+  var counterArray = [];
+
+  // for every user, and every possible forbidden id
+  for(int i = 0; i < numberOfUsers; i++) {
+
+    // turn flag to false if it hits a forbidden id
+    var flag = true;
+
+    for(j = 0; j < forbidden.length; j++) {
+      if(user[i].id == forbidden[j]){
+        flag = false;
+      }
+    }
+    if(flag){
+      // initialize 2d array: [ id , 0 (will be added to later)]
+      counterArray.push([ i , 0 ]);
+    }
+  }
+
+  // ----------------------- Step 2 --------------------------//
+
+  if(user.politics){
+    // add to all who also like politics
+    for(i = 0; i < counterArray.length; i++){
+      // check if the user also likes politics
+      if(counterArray[i][0].politics){
+        // add one to the counter side of the 2d array
+        counterArray[i][1]++;
+      }
+    }
+  }
+  if(user.food){
+    // add to all who also like ...
+    for(i = 0; i < counterArray.length; i++){
+      // check if the user also likes ...
+      if(counterArray[i][0].food){
+        // add one to the counter side of the 2d array
+        counterArray[i][1]++;
+      }
+    }
+  }
+  if(user.movies){
+    // add to all who also like ...
+    for(i = 0; i < counterArray.length; i++){
+      // check if the user also likes ...
+      if(counterArray[i][0].movies){
+        // add one to the counter side of the 2d array
+        counterArray[i][1]++;
+      }
+    }
+  }
+  if(user.sports){
+    // add to all who also like ...
+    for(i = 0; i < counterArray.length; i++){
+      // check if the user also likes ...
+      if(counterArray[i][0].sports){
+        // add one to the counter side of the 2d array
+        counterArray[i][1]++;
+      }
+    }
+  }
+  if(user.travel){
+    // add to all who also like ...
+    for(i = 0; i < counterArray.length; i++){
+      // check if the user also likes ...
+      if(counterArray[i][0].travel){
+        // add one to the counter side of the 2d array
+        counterArray[i][1]++;
+      }
+    }
+  }
+  if(user.diy){
+    // add to all who also like ...
+    for(i = 0; i < counterArray.length; i++){
+      // check if the user also likes ...
+      if(counterArray[i][0].diy){
+        // add one to the counter side of the 2d array
+        counterArray[i][1]++;
+      }
+    }
+  }
+
+// ----------------------- Step 3 --------------------------//
+
+  for(startHere = 0; startHere < counterArray.length; startHere++){
+
+    //set the max equal to the first term
+    max = startHere;
+
+    for(j = startHere; j < counterArray.length; j++){
+      if( counterArray[max][1] < counterArray[j][1] ){
+        max = j;
+      }
+    }
+
+    //swap startHere and j
+    var temp = counterArray[startHere];
+    counterArray[startHere] = counterArray[max];
+    counterArray[max] = temp;
+
+  }
+
+
+}
+*/
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
