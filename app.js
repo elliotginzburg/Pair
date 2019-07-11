@@ -137,6 +137,11 @@ function isLoggedIn(req, res, next) {
 app.get('/home', function(req, res) {
         res.render('home')
 });
+app.get('/choose', function(req, res) {
+        res.render('choose')
+});
+
+
 
 // we require them to be logged in to see their profile
 app.get('/Jai',function(req, res) {
@@ -160,6 +165,11 @@ app.get('/profile', isLoggedIn, function(req, res) {
 app.get('/aboutpages', function(req, res) {
           res.render('aboutpages')
 });
+
+// CHAT CHANGE 
+app.get('/chat',(req,res,next)=>{
+  res.render('chat',{title:"ChatDemo"});
+})
 
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
@@ -210,6 +220,14 @@ app.post('/forumDelete',forumPostController.deleteForumPost)
 app.get('/showPost/:id',
         forumPostController.attachAllForumComments,
         forumPostController.showOnePost)
+
+// CHAT CHANGE
+app.get('/showPostComments/:id',
+        forumPostController.attachAllForumComments,
+        (req,res)=>{
+          res.render('forumPostComments',{title:"comments"})
+        })
+
 
 app.post('/saveForumComment',forumPostController.saveForumComment)
 

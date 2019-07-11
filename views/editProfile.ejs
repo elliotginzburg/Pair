@@ -11,32 +11,9 @@
         <p> Last updated on <%= user.lastUpdate %> </p>
         <hr>
 
+    <a class="btn btn-primary" href="/choose" role="button">Choose Interest</a>
 
         <form method="post" action="/updateProfile">
-
-          <div class="checkbox">
-            <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %>  >Politics</label>
-          </div>
-
-          <div class="checkbox">
-            <label><input type="checkbox" name="food" <% if(user.food){ %> checked <%  } %>>Food</label>
-          </div>
-
-          <div class="checkbox">
-            <label><input type="checkbox" name="movies" <% if(user.movies){ %> checked <%  } %>>Movies</label>
-          </div>
-
-          <div class="checkbox">
-            <label><input type="checkbox" name="sports" <% if(user.sports){ %> checked <%  } %>>Sports</label>
-          </div>
-
-          <div class="checkbox">
-            <label><input type="checkbox" name="travel" <% if(user.travel){ %> checked <%  } %>>Travel</label>
-          </div>
-
-          <div class="checkbox" >
-            <label><input type="checkbox" name="diy" <% if(user.diy){ %> checked <%  } %>>DIY</label>
-          </div>
 
             Age: <input type="number" name="age" value="<%= user.age %>"><br><br>
             Profile Pic URL: <input type="text" name="profilePicURL"

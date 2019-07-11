@@ -1,0 +1,33 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+
+<form method="post" action="/updateProfile">
+
+  <div class="checkbox">
+    <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %>  >Politics</label>
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox" name="food" <% if(user.food){ %> checked <%  } %>>Food</label>
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox" name="movies" <% if(user.movies){ %> checked <%  } %>>Movies</label>
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox" name="sports" <% if(user.sports){ %> checked <%  } %>>Sports</label>
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox" name="travel" <% if(user.travel){ %> checked <%  } %>>Travel</label>
+  </div>
+
+  <div class="checkbox" >
+    <label><input type="checkbox" name="diy" <% if(user.diy){ %> checked <%  } %>>DIY</label>
+  </div>
+
+  <input type="submit" class="btn btn-lg btn-primary">
+  </form>
+
+<%- include('bootfooter') -%>
