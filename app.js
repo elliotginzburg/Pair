@@ -18,7 +18,7 @@ const mongoose = require( 'mongoose' );
 var uristring =
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
-    'mongodb://localhost/mydb';
+    'mongodb://heroku_1mh6jvp2:mggno2vrjh2036n5tf58ppqh7t@ds247637.mlab.com:47637/heroku_1mh6jvp2';
 
     // Makes connection asynchronously.  Mongoose will queue up database
     // operations and release them when the connection is complete.
