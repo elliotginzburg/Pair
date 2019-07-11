@@ -22,56 +22,31 @@
 
 
 
-            <!-- Gets the top five best matches
-            <% /* var topFive = getTopFive(); %>
 
-            <!-- loops through an array "topFive" of the top five best matches
-            <%  for(i = 0; i < 5; i++) { %>
+
+            <!-- loops through an array "topFive" of the top five best matches -->
+            <%  for(var i = 0; i < topFive.length; i++) {  %>
               <tr>
-                <th scope="row"><% i + 1 %></th>
-                <td><% topFive[i].name %></td>
+                <td><%= i + 1  %></td>
+
+                <td><%= users[topFive[i]].googlename %></td>
                 <td>
-                  <!-- Confirm of deny button
-                  <% if(topFive[i].politics && user.politics ){ %> Politics <% } %>
-                  <% if(topFive[i].food && user.food){ %> Food <% } %>
-                  <% if(topFive[i].movies && user.movies){ %> Movies <% } %>
-                  <% if(topFive[i].sports && user.sports){ %> Sports <% } %>
-                  <% if(topFive[i].travel && user.travel){ %> Travel <% } %>
-                  <% if(topFive[i].diy && user.diy{ %> DIY <% } %>
+                  <!-- Confirm of deny button -->
+                  <% if(users[topFive[i]].politics && user.politics ){ %> Politics <% } %>
+                  <% if(users[topFive[i]].food && user.food){ %> Food <% } %>
+                  <% if(users[topFive[i]].movies && user.movies){ %> Movies <% } %>
+                  <% if(users[topFive[i]].sports && user.sports){ %> Sports <% } %>
+                  <% if(users[topFive[i]].travel && user.travel){ %> Travel <% } %>
+                  <% if(users[topFive[i]].diy && user.diy){ %> DIY <% } %>
                 </td>
                 <td>
-                  <!-- Confirm of deny button
+                  <!-- Confirm of deny button -->
                   <button class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</button>
                   <button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button></td>
-                  <!-- If decline is pressed add the user to forbidden ids and refresh the page
               </tr>
 
-            <% } */%>
+            <% } %>
 
-            -->
-
-
-
-
-
-            <tr>
-              <th scope="row">1</th>
-              <td>Joe Bob</td>
-              <td>Sports, Movies</td>
-              <td><button class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</button><button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob Smith</td>
-              <td>Movies, DIY</td>
-              <td><button class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</button><button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button></td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry Jones</td>
-              <td>DIY, Sports</td>
-              <td><button class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</button><button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button></td>
-            </tr>
           </tbody>
         </table>
 
