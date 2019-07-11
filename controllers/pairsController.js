@@ -31,6 +31,8 @@ function getUsers(users){
   return users;
 }
 
+
+
 function getTopFive(users, user){
 
   // ----------------------- Step 1 --------------------------//
@@ -149,13 +151,18 @@ function getTopFive(users, user){
 
   var topFive = [];
 
-  for(i = 0; i < 2; i++){
-    console.log(counterArray[i][0]);
-    topFive.push(counterArray[i][0]);
-    console.log(topFive[i]);
+  if(counterArray.length < 5){
+    for(i = 0; i < counterArray.length; i++){
+      topFive.push(counterArray[i][0]);
+    }
   }
-
-
+  else{
+    for(i = 0; i < 5; i++){
+      console.log(counterArray[i][0]);
+      topFive.push(counterArray[i][0]);
+      console.log(topFive[i]);
+    }
+  }
 
   return topFive;
 
