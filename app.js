@@ -14,9 +14,10 @@ flash = require('connect-flash')
 // END OF AUTHENTICATION MODULES
 
 const mongoose = require( 'mongoose' );
+const MONGOLAB_GOLD_URI = 'mongodb://heroku_14n0lj90:9oh7veboks1o4up0ovnk03m104@ds243607.mlab.com:43607/heroku_14n0lj90'
 
 var uristring =
-    process.env.MONGOLAB_URI ||
+    process.env.MONGOLAB_GOLD_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/mydb';
 
