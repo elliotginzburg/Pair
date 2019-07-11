@@ -149,7 +149,7 @@ function getTopFive(users, user){
 
   var topFive = [];
 
-  for(i = 0; i < 2; i++){
+  for(i = 0; i < 1; i++){
     console.log(counterArray[i][0]);
     topFive.push(counterArray[i][0]);
     console.log(topFive[i]);

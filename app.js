@@ -63,7 +63,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-const approvedLogins = ["tjhickey724@gmail.com","csjbs2018@gmail.com"];
+const approvedLogins = ["tjhickey724@gmail.com","csjbs2018@gmail.com","jai.vdamani@gmail.com"];
 
 // here is where we check on their logged in status
 app.use((req,res,next) => {
@@ -166,7 +166,7 @@ app.get('/aboutpages', function(req, res) {
           res.render('aboutpages')
 });
 
-// CHAT CHANGE 
+// CHAT CHANGE
 app.get('/chat',(req,res,next)=>{
   res.render('chat',{title:"ChatDemo"});
 })
