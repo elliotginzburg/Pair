@@ -9,7 +9,6 @@ var logger = require('morgan');
 // AUTHENTICATION MODULES
 session = require("express-session"),
 bodyParser = require("body-parser"),
-User = require( './models/User' ),
 flash = require('connect-flash')
 // END OF AUTHENTICATION MODULES
 
@@ -176,7 +175,16 @@ app.get('/showChat/:user1/:user2',
 app.post('/showChat/:user1/:user2',
         chatController.savePost)
 
-
+app.get('/resetDB',(req,res)=>{
+  // this deletes all of the documents in all collections
+  require('./models/Chat').deleteMany({}).exec()
+  require('./models/Comment').deleteMany({}).exec()
+  require('./models/ForumComment').deleteMany({}).exec()
+  require('./models/ForumPost').deleteMany({}).exec()
+  require('./models/MovieRating').deleteMany({}).exec()
+  require('./models/User').deleteMany({}).exec()
+  res.redirect('/')
+})
 
 app.get('/yourpairs', pairsController.attachTopFive,
     function(req, res) {
