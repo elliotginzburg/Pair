@@ -166,6 +166,7 @@ app.get('/choose', function(req, res) {
 
 
 // we require thowoem to be logged in to see their profile
+
 app.get('/showChat/:user1/:user2',
         chatController.addPosts,
         function(req, res) {
@@ -174,6 +175,7 @@ app.get('/showChat/:user1/:user2',
 
 app.post('/showChat/:user1/:user2',
         chatController.savePost)
+
 
 app.get('/yourpairs', pairsController.attachTopFive,
     function(req, res) {
