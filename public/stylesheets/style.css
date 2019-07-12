@@ -62,19 +62,18 @@ html body{
 backgroound-color: rgba(0,0,0,1.00);
 
 }
-<<<<<<< HEAD
+
 img.btn{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 30px;
   box-shadow: 10px 10px 5px grey;
   size: 2px
-=======
+}
 
 img.interest-image{
   border-radius: 30px;
   box-shadow: 10px 10px 5px grey;
   padding: 15px;
   padding-top: 30px;
->>>>>>> 82e08d7e6d9ad61cb0d200825222abed968abd17
 }
