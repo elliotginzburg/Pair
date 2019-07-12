@@ -207,6 +207,10 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
 app.get('/chat',isLoggedIn, (req,res)=>{
   res.render('chat')
 })
+app.get('/location', isLoggedIn, function(req, res) {
+        res.render('location')
+});
+
 
 app.get('/interests', (req,res)=>{
   res.render('interests')
