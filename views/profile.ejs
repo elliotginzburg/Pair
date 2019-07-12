@@ -1,14 +1,30 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <img src="<%= user.profilePicURL%>" width="400">
-        <br>
-        <p> Welcome <%= user.googlename %><br>
-        You are logged in to Pair. <br>
-        Email: <%= user.googleemail %>
 
+        <img src="<%= user.profilePicURL%>" width="400">
+
+        <br>
+
+        <!--
+        <p> Welcome <%=// user.googlename %><br>
+        You are logged in to Pair. <br>
+        Email: <%=// user.googleemail %>
         </p>
+        -->
+
+
+        <table class="table table-striped">
+          <thead class="bg-dark">
+            <th class="text-light" scope="col"><%= user.googlename %> (<%= user.googleemail %>)</th>
+
+          </thead>
+
+
+
+
          <p> Last updated on <%= user.lastUpdate %> </p>
+
         <hr>
         <p> Age:<%= user.age %> </p> <br>
         <p> Address:<%= user.address %> </p> <br>
@@ -22,7 +38,7 @@
                        <% if(user.diy){ %> DIY, <% } %> </p>
 <br>
   <a class="btn btn-primary" href="/editProfile" role="button">Edit Profile</a>
-    
+
     </div>
 
 <%- include('bootfooter') -%>
