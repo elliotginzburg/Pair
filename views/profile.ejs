@@ -23,6 +23,31 @@
           <tbody>
 
             <tr>
+              <td>Age</td>
+              <td><%= user.age %></td>
+            </tr>
+
+            <tr>
+              <td>Address</td>
+              <td><%= user.address %></td>
+            </tr>
+
+            <tr>
+              <td>Bio</td>
+              <td><%= user.bio %></td>
+            </tr>
+
+            <tr>
+              <td>Interests</td>
+              <td>
+                <% if(user.politics){ %> Politics, <% } %>
+                <% if(user.food){ %> Food, <% } %>
+                <% if(user.movies){ %> Movies, <% } %>
+                <% if(user.sports){ %> Sports, <% } %>
+                <% if(user.travel){ %> Travel, <% } %>
+                <% if(user.diy){ %> DIY, <% } %> %>
+              </td>
+            </tr>
 
           </tbody>
         </table>
