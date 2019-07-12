@@ -1,13 +1,13 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1><%= post.userName %></h1>
-        <p> <%= post.createdAt %></p>
+        <h1><%= user.googlename %></h1>
+
     </div>
 
     <i>
 
-   <% if (post.userId.equals(user._id)) { %>
+<% if (userId.equals(user._id)) { %>
        <input type="checkbox" name="delete" value="<%= post._id %>">
    <% } %>
    <pre>
@@ -19,7 +19,7 @@
        <input class="btn btn-sm btn-primary" type="submit" value="Add Comment">
    </form>
    <br><br><br>
-  <h1> Comment</h1>
+  <h1> Chat with </h1>
   <iframe src="/showPostComments/<%= post._id%>" height="200" width="100%"></iframe>
 
 

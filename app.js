@@ -47,6 +47,7 @@ const profileController = require('./controllers/profileController')
 const forumPostController = require('./controllers/forumPostController')
 const quiz2Controller = require('./controllers/quiz2Controller')
 const pairsController = require('./controllers/pairsController')
+//const chatController=require("./controllers/chatController")
 // Authentication
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 // here we set up authentication with passport
@@ -164,10 +165,16 @@ app.get('/choose', function(req, res) {
 
 
 
-// we require them to be logged in to see their profile
-app.get('/Jai',function(req, res) {
-        res.render('Jai')
+// we require thowoem to be logged in to see their profile
+/* app.get('/showChat/:user1/:user2',
+        chatController.addPosts,
+        function(req, res) {
+           res.render('showChat')
 });
+
+app.post('/showChat/:user1/:user2',
+        chatController.savePost)
+        */
 
 app.get('/yourpairs', pairsController.attachTopFive,
     function(req, res) {
