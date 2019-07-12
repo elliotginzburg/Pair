@@ -5,15 +5,15 @@
         <p>Chat with YOUR pair now!</p>
     </div>
 
-    <form method="post" action="/forum">
+  <!--  <form method="post" action="/forum">
       New Post: <br>
       <textarea id="post" name="post"></textarea>
       <br>
       <input type="submit" class="btn btn-lg btn-primary">
     </form>
     <hr>
-    <form method="post" action="/forumDelete">
-        <input type="submit" value="delete marked">
+   <form method="post" action="/forumDelete">
+        <input type="submit" value="delete marked">-->
         <ol>
         <% for(i = 0; i<posts.length; i++){  %>
             <li> <a href="/showPost/<%= posts[i]._id %>">
@@ -24,12 +24,12 @@
                  <% if (posts[i].userId.equals(user._id)) { %>
                      <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
                  <% } %>
-                 <pre><%= posts[i].post %></pre>
+<!--                 <pre><%= posts[i].post %></pre>-->
 
              </li>
         <% } %>
         </ol>
 
-    </form>
+
 
 <%- include('bootfooter') -%>
