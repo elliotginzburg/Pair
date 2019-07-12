@@ -1,52 +1,14 @@
 <%- include('bootheader') -%>
+<%- include('menubar') -%>
+
     <div class="jumbotron">
         <h1>Login to Pair </h1>
         <h2>Sign in with Google </h2>
-        <a class="btn btn-danger" href="/auth/google">
+        <a class="btn btn-primary" href="/auth/google">
             <span class="fa fa-google-plus"> Google</span>
         </a>
-        <br><br>
-        <h2>Sign in through Pair</h2>
-        <br>
-        <form method="post" action="/login">
 
-        <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <td>
-                First Name
-              </td>
-              <td>
-                <input type="text">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Last Name
-              </td>
-              <td>
-                <input type="text">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Email
-              </td>
-              <td>
-                <input type="text">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Password
-              </td>
-              <td>
-                <input type="text">
-              </td>
-            </tr>
-          </tbody>
-        <table>
-        <input type="submit" class="btn btn-lg btn-primary">
+
 
     </div>
 

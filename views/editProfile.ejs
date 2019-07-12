@@ -1,13 +1,8 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1>Pair Profile for <%= user.userName %></h1>
+        <h1>Pair Profile for <%= user.googlename %></h1>
         <img src="<%= user.profilePicURL%>" width="200">
-        <hr>
-        <p> Welcome <%= user.googlename %>
-            with email <%= user.googleemail %>
-            You are logged in to Pair
-        </p>
         <p> Last updated on <%= user.lastUpdate %> </p>
 
     <!-- edit out for now <a class="btn btn-primary" href="/choose" role="button">Choose Interest</a><hr>-->
@@ -15,76 +10,83 @@
         <form method="post" action="/updateProfile">
 
 
-
-            <table class="table ">
-              <thead>
-                <tr>
-                  <th>  <div class="checkbox">
-                      <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %>  >Politics</label>
-                        <label for="checkbox"><img class="interest-image" src = "images/politics.jpg"width="500"/></label>
+              <div class="row">
+                <div class="col">
+                  <div class="checkbox">
+                     <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %> >Politics</label>
+                        <label for="checkbox"><img class="interest-image" src = "images/politics.jpg"width="300" height="150"></label>
                     </div>
-                  </th>
-                    <th>
+                </div>
+                <div class="col">
                       <div class="checkbox">
                       <label><input type="checkbox" name="movies" <% if(user.movies){ %> checked <%  } %>>Movies</label>
-                        <label for="movies"><img class="interest-image" src = "images/movies.jpg" width="500" /></label>
-                    </div></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
+                        <label for="movies"><img class="interest-image" src = "images/movies.jpg" width="300" height="150"></label>
+                    </div>
+                </div>
+                <div class="col">
                     <div class="checkbox">
-                    <label><input type="checkbox" name="food"<% if(user.food){ %> checked <%  } %>><strong>Foods</strong></label><br>
+                    <label><input type="checkbox" name="food"<% if(user.food){ %> checked <%  } %>>Foods</label>
                     <label for="food">
-                      <img class="interest-image" src =  "images/food.jpg"width="500"/></label>
+                      <img class="interest-image" src =  "images/food.jpg"width="300" height="150"></label>
                   </div>
-                </td><th>
+                </div>
+                <div class="col">
                     <div class="checkbox">
                     <label><input type="checkbox" name="sports" <% if(user.sports){ %> checked <%  } %>>Sports</label>
-                      <label for="sports"><br>
-                        <img class="interest-image" src = "images/sports.jpg"width="500" /></label>
+                      <label for="sports">
+                        <img class="interest-image" src = "images/sports.jpg"width="300" height="150"></label>
                   </div>
-                </th><
-                </tr>
-                <tr>
-                  <th>
+                </div>
+                <div class="col">
                     <div class="checkbox" >
                     <label><input type="checkbox" name="diy" <% if(user.diy){ %> checked <%  } %>>DIY</label>
-                      <label for="diy"><br>
-                        <img class="interest-image" src = "images/diy.jpg"width="530"/></label>
+                      <label for="diy">
+                        <img class="interest-image" src = "images/diy.jpg"width="300" height="150"></label>
                   </div>
-                </th>
-
-
-                  <th>
+                  </div>
+                  <div class="col">
                     <div class="checkbox">
                       <label><input type="checkbox" name="travel" <% if(user.travel){ %> checked <%  } %>>Travel</label>
-                        <label for="travel"><br>
-                          <img class="interest-image" src = "images/travel.jpg"width="500"/></label>
+                        <label for="travel">
+                          <img class="interest-image" src = "images/travel.jpg"width="300" height="150"></label>
                     </div>
-
-                </th>
-
-
+                  </div>
+              </div>
 
 
-
-              </tbody>
-            </table>
-            <input type="submit" class="btn btn-lg btn-primary"> <br>
+            <br><br>
 
 
-            Age: <input type="number" name="age" value="<%= user.age %>"><br><br>
-            Profile Pic URL: <input type="text" name="profilePicURL"
-                              value="<%= user.profilePicURL %>"><br><br>
-            Address: <input type="text" name="address"
-                         value="<%= user.address %>"><br><br>
-            Bio: <input type="text" name="bio"
-                         value="<%= user.bio %>"><br><br>
-            <input type="submit" class="btn btn-primary">
+            <div class="form-group">
+              <label for="ageSelector">Select Your Age</label>
+              <input type="number" class="form-control" id="ageSelector" placeholder="Enter Age" name="age" aria-describedby="ageHelp" value="<%= user.age %>">
+              <small id="ageHelp" class="form-text text-muted">You must be 16 to sign up.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="urlSelector">Enter A Profile Pic URL</label>
+              <input placeholder="Enter URL" id="urlSelector" class="form-control" type="text" name="profilePicURL" value="<%= user.profilePicURL %>" aria-describedby="urlHelp">
+              <small id="urlHelp" class="form-text text-muted">Right click on the picture and "Copy Image URL".</small>
+            </div>
+
+            <div class="form-group">
+              <label for="addressSelector">Enter Your Address</label>
+              <input type="text" name="address" value="<%= user.address %>" placeholder="House Number - Street Name, City State, ZipCode" id="addressSelector" class="form-control" aria-describedby="streetHelp">
+              <small id="streetHelp" class="form-text text-muted">This will not be shared with other users.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="addressSelector">Bio</label>
+              <input type="text" name="bio"value="<%= user.bio %>" placeholder="A Short Bio About You" id="bioSelector" class="form-control">
+            </div>
+
+            <br>
+
+            <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+
         </form>
 <p>
     </div>
 
 <%- include('bootfooter') -%>
+<%- include('footer') -%>
