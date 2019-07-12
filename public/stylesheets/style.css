@@ -1,7 +1,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding : 0;
 }
 
 a {
@@ -27,6 +27,7 @@ h1.name-style{
   text-shadow: 2px 2px 6px #a6c8ff;
   text-align: center;
 }
+
 
 img.interest-style{
   border-radius: 30px;
