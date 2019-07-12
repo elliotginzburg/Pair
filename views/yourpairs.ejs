@@ -1,7 +1,7 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-      
+
         <h1>Your Pairs</h1>
 
         <table class="table table-striped">
@@ -42,7 +42,7 @@
                 </td>
                 <td>
                   <!-- Confirm of deny button -->
-                  <button class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</button>
+                  <a href="/showChat/<%= user._id%>/<%= users[topFive[i]]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</a>
                   <button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button></td>
               </tr>
 
