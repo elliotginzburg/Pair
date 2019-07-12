@@ -6,6 +6,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 var chatSchema = Schema( {
   user1: ObjectId,
   user2: ObjectId,
+  email: String,
   post: String,
   createdAt: Date
 } );

@@ -15,6 +15,7 @@ exports.savePost = ( req, res ) => {
    {
     user1: req.params.user1,
     user2: req.params.user2,
+    email: req.user.googleemail,
     post: req.body.post,
     createdAt: new Date()
    }

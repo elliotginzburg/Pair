@@ -2,7 +2,7 @@
 <%- include('menubar') -%>
     <div class="jumbotron">
 
-        <h1>Your Pairs</h1>
+        <h1>Your Pairs!</h1>
 
         <table class="table table-striped">
           <thead class="bg-dark">
@@ -50,7 +50,9 @@
 
                   <!-- Confirm of deny button -->
                   <a  href="/showChat/<%= user._id%>/<%= users[topFive[i]]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</a>
-                  <button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button></td>
+                  <button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button>
+                  <a  href="/showChat/<%= users[topFive[i]]._id %>/<%= user._id%>" class="btn btn-success accept-or-deny" type="button" name="button">Join Chat</a>
+                </td>
               </tr>
 
             <% } %>
