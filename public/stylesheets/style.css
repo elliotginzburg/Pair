@@ -1,7 +1,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
-  padding : 0;
+  padding: 0;
 }
 
 a {
@@ -27,7 +27,6 @@ h1.name-style{
   text-shadow: 2px 2px 6px #a6c8ff;
   text-align: center;
 }
-
 
 img.interest-style{
   border-radius: 30px;
@@ -60,15 +59,28 @@ div.footer-class{
 
 html body{
 backgroound-color: rgba(0,0,0,1.00);
-
 }
-<<<<<<< HEAD
+
+img.interest-image{
+  border-radius: 30px;
+  box-shadow: 10px 10px 5px grey;
+  padding: 15px;
+  padding-top: 30px;
+}
+
+/*nav.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  } */
+
 img.btn{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 30px;
   box-shadow: 10px 10px 5px grey;
   size: 2px
+<<<<<<< HEAD
 =======
 
 img.interest-image{
@@ -77,4 +89,6 @@ img.interest-image{
   padding: 15px;
   padding-top: 30px;
 
+=======
+>>>>>>> 33f5e3e486ce33355be51d6525b11a184ead8f0d
 }
