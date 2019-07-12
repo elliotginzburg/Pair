@@ -31,11 +31,9 @@ var uristring =
       }
     });
 
-<<<<<<< HEAD
 
 //mongoose.connect( 'mongodb://localhost/mydb', { useNewUrlParser: true } );
-=======
->>>>>>> e4ba73a9360b169b8933846a8facea610464dad0
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
