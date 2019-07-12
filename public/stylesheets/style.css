@@ -1,7 +1,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding : 0;
 }
 
 a {
@@ -28,6 +28,7 @@ h1.name-style{
   text-align: center;
 }
 
+
 img.interest-style{
   border-radius: 30px;
   box-shadow: 10px 10px 5px grey;
@@ -53,18 +54,27 @@ a.footerlink{
 }
 
 div.footer-class{
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 html body{
 backgroound-color: rgba(0,0,0,1.00);
 
 }
+<<<<<<< HEAD
 img.btn{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 30px;
   box-shadow: 10px 10px 5px grey;
   size: 2px
+=======
+
+img.interest-image{
+  border-radius: 30px;
+  box-shadow: 10px 10px 5px grey;
+  padding: 15px;
+  padding-top: 30px;
+>>>>>>> 82e08d7e6d9ad61cb0d200825222abed968abd17
 }
