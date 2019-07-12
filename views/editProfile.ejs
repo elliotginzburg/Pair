@@ -10,8 +10,6 @@
         </p>
         <p> Last updated on <%= user.lastUpdate %> </p>
 
-  <!--  <a class="btn btn-primary" href="/choose" role="button">Choose Interest</a> <hr>
-=======
     <!-- edit out for now <a class="btn btn-primary" href="/choose" role="button">Choose Interest</a><hr>-->
 
         <form method="post" action="/updateProfile">
@@ -37,7 +35,7 @@
                 <tr>
                   <td>
                     <div class="checkbox">
-                    <label><input type="checkbox" name="food" <% if(user.food){ %> checked <%  } %>>Food</label>
+                    <label><input type="checkbox" name="food"<% if(user.food){ %> checked <%  } %>><strong>Foods</strong></label>
                     <label for="food"><br>
                       <img src = "images/food.jpg"width="500"/></label>
                   </div>
