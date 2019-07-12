@@ -36,7 +36,9 @@ exports.update = ( req, res ) => {
       res.render( 'profile', {
           profile:profile, title:"Profile"
         } );
+
      })
+    res.redirect('/profile')
    })
   .catch(function (error) {
     // handle error
