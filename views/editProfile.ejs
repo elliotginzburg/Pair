@@ -21,13 +21,13 @@
                 <tr>
                   <th>  <div class="checkbox">
                       <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %>  >Politics</label>
-                        <label for="checkbox"><img src = "images/politics.jpg"width="500"/></label>
+                        <label for="checkbox"><img class="interest-image" src = "images/politics.jpg"width="500"/></label>
                     </div>
                   </th>
                     <th>
                       <div class="checkbox">
                       <label><input type="checkbox" name="movies" <% if(user.movies){ %> checked <%  } %>>Movies</label>
-                        <label for="movies"><img src = "images/movies.jpg" width="500" /></label>
+                        <label for="movies"><img class="interest-image" src = "images/movies.jpg" width="500" /></label>
                     </div></th>
                 </tr>
               </thead>
@@ -35,15 +35,15 @@
                 <tr>
                   <td>
                     <div class="checkbox">
-                    <label><input type="checkbox" name="food"<% if(user.food){ %> checked <%  } %>><strong>Foods</strong></label>
-                    <label for="food"><br>
-                      <img src = "images/food.jpg"width="500"/></label>
+                    <label><input type="checkbox" name="food"<% if(user.food){ %> checked <%  } %>><strong>Foods</strong></label><br>
+                    <label for="food">
+                      <img class="interest-image" src =  "images/food.jpg"width="500"/></label>
                   </div>
                 </td><th>
                     <div class="checkbox">
                     <label><input type="checkbox" name="sports" <% if(user.sports){ %> checked <%  } %>>Sports</label>
                       <label for="sports"><br>
-                        <img src = "images/sports.jpg"width="500" /></label>
+                        <img class="interest-image" src = "images/sports.jpg"width="500" /></label>
                   </div>
                 </th><
                 </tr>
@@ -52,7 +52,7 @@
                     <div class="checkbox" >
                     <label><input type="checkbox" name="diy" <% if(user.diy){ %> checked <%  } %>>DIY</label>
                       <label for="diy"><br>
-                        <img src = "images/diy.jpg"width="530"/></label>
+                        <img class="interest-image" src = "images/diy.jpg"width="530"/></label>
                   </div>
                 </th>
 
@@ -61,7 +61,7 @@
                     <div class="checkbox">
                       <label><input type="checkbox" name="travel" <% if(user.travel){ %> checked <%  } %>>Travel</label>
                         <label for="travel"><br>
-                          <img src = "images/travel.jpg"width="500"/></label>
+                          <img class="interest-image" src = "images/travel.jpg"width="500"/></label>
                     </div>
 
                 </th>
