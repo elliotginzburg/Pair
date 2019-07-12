@@ -1,3 +1,5 @@
+/*
+
 'use strict';
 const chat = require( '../models/chat' );
 
@@ -144,3 +146,5 @@ exports.attachAllForumComments = ( req, res, next ) => {
       //console.log( 'skill promise complete' );
     } );
 };
+
+*/

@@ -26,7 +26,9 @@ var userSchema = Schema( {
   sports: Boolean,
   travel: Boolean,
   diy: Boolean,
-  usedIDs: [Number]
+  usedIDs: [Number],
+  declinedIDs: [Number],
+  acceptedIDs: [Number]
   //list of forbidden ids
   // forbidden: L Integer
   //people you have said "chat" to, or hava accepted their request
