@@ -10,6 +10,7 @@ exports.attachTopFive = ( req, res, next ) => {
     .then( ( users ) => {
       res.locals.topFive = getTopFive(users, req.user)
       res.locals.users = getUsers(users)
+      // add declineChat and chatNow functions
       next()
     } )
     .catch( ( error ) => {
@@ -21,17 +22,29 @@ exports.attachTopFive = ( req, res, next ) => {
     } );
 };
 
+
+/*
+function chatNow( id, user ){
+  user.usedIDs.push( id );
+  user.acceptedIDs.push( id );
+}
+
+function declineChat( id, user ){
+  user.usedIDs.push( id );
+  user.declinedIDs.push( id );
+}
+*/
+
+function getUsers(users){
+  return users;
+}
+
 /*
 Step 1: Initialize array for all except forbidden
 Step 2: Count all instances of duplicate interests
 Step 3: Sort by decending order - number of similar interests
 Step 4: Return only the top 5
 */
-function getUsers(users){
-  return users;
-}
-
-
 
 function getTopFive(users, user){
 
@@ -48,18 +61,19 @@ function getTopFive(users, user){
       counterArray.push([ i , 0 ]);
     }
 
-    // turn flag to false if it hits a forbidden id
-    /* var flag = true;
+    /*
+    var flag = true;
 
-    for(j = 0; j < forbidden.length; j++) {
-      if(user[i].id == forbidden[j]){
+    for(j = 0; j < usedIDs.length; j++) {
+      if(user[i].id == usedIDs[j]){
         flag = false;
       }
     }
     if(flag){
       // initialize 2d array: [ id , 0 (will be added to later)]
       counterArray.push([ i , 0 ]);
-    } */
+    }
+    */
   }
 
   // ----------------------- Step 2 --------------------------//
