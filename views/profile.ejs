@@ -1,28 +1,68 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <img src="<%= user.profilePicURL%>" width="400">
+
+        <img class="about-me-pic" src="<%= user.profilePicURL%>" width="400">
+
         <br>
-        <p> Welcome <%= user.googlename %><br>
+
+        <!--
+        <p> Welcome <%=// user.googlename %><br>
         You are logged in to Pair. <br>
-        Email: <%= user.googleemail %>
-
+        Email: <%=// user.googleemail %>
         </p>
-         <p> Last updated on <%= user.lastUpdate %> </p>
-        <hr>
-        <p> Age:<%= user.age %> </p> <br>
-        <p> Address:<%= user.address %> </p> <br>
-        <p> Bio: <%= user.bio %> </p> <br>
+        -->
 
-        <p> Interests: <% if(user.politics){ %> Politics, <% } %>
-                       <% if(user.food){ %> Food, <% } %>
-                       <% if(user.movies){ %> Movies, <% } %>
-                       <% if(user.sports){ %> Sports, <% } %>
-                       <% if(user.travel){ %> Travel, <% } %>
-                       <% if(user.diy){ %> DIY, <% } %> </p>
+
+        <table class="table table-striped table-bordered  bordercolor="color">
+          <thead class="bg-dark">
+
+
+
+              <th colspan="2" id="label" class="text-light"><%= user.googlename %> (<%= user.googleemail %>)</th>
+
+
+          </thead>
+          <tbody>
+
+            <tr>
+              <td width=" 50%">Age</td>
+              <td><%= user.age %></td>
+            </tr>
+
+            <tr>
+              <td>Address</td>
+              <td><%= user.address %></td>
+            </tr>
+
+            <tr>
+              <td>Bio</td>
+              <td><%= user.bio %></td>
+            </tr>
+
+            <tr>
+              <td>Interests</td>
+              <td>
+                <% if(user.politics){ %> Politics, <% } %>
+                <% if(user.food){ %> Food, <% } %>
+                <% if(user.movies){ %> Movies, <% } %>
+                <% if(user.sports){ %> Sports, <% } %>
+                <% if(user.travel){ %> Travel, <% } %>
+                <% if(user.diy){ %> DIY, <% } %> %>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+
+        <hr>
+         <p> Last updated on <%= user.lastUpdate %> </p>
+
 <br>
   <a class="btn btn-primary" href="/editProfile" role="button">Edit Profile</a>
-    
+
     </div>
 
 <%- include('bootfooter') -%>

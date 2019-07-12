@@ -49,15 +49,43 @@ img.logo{
 a.footerlink{
   padding-left: 10px;
   padding-right: 10px;
+  padding: 20px;
   color: black;
+  font: 20px "Times New Roman", Times, serif;
 }
 
 div.footer-class{
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 html body{
 backgroound-color: rgba(0,0,0,1.00);
+}
 
+img.interest-image{
+  border-radius: 30px;
+  box-shadow: 10px 10px 5px grey;
+  padding: 15px;
+  padding-top: 30px;
+}
+
+
+img.btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 5px grey;
+  size: 2px
+}
+
+img.interest-image{
+  border-radius: 30px;
+  box-shadow: 10px 10px 5px grey;
+  padding: 15px;
+  padding-top: 30px;
+}
+
+th#label{
+  text-align: center;
 }

@@ -30,7 +30,7 @@ exports.saveForumPost = ( req, res ) => {
 };
 
 
-// this displays all of the skills
+//this displays all of the skills
 exports.getAllForumPosts = ( req, res, next ) => {
   //gconsle.log('in getAllSkills')
   ForumPost.find({}).sort({createdAt: -1})
