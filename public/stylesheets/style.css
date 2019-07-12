@@ -68,11 +68,6 @@ img.interest-image{
   padding-top: 30px;
 }
 
-/*nav.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  } */
 
 img.btn{
   margin-top: 10px;
@@ -87,4 +82,8 @@ img.interest-image{
   box-shadow: 10px 10px 5px grey;
   padding: 15px;
   padding-top: 30px;
+}
+
+th#label{
+  text-align: center;
 }
