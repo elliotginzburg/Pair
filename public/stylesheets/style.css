@@ -100,3 +100,9 @@ footer.page-footer {
   height: 120px;
   text-align:center;
 }
+
+img#profile-pic{
+  display: block;
+  margin: auto;
+  margin-bottom: 40px;
+}
