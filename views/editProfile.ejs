@@ -1,8 +1,15 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1>Pair Profile for <%= user.googlename %></h1>
-        <img src="<%= user.profilePicURL%>" width="200">
+        <h1>Pair Profile for <label class="text-primary"><%= user.googlename %></label></h1>
+
+        <% if( user.profilePicURL == ""){ %>
+          <img id="profile-pic" class="about-me-pic" width="200px" height="200px" src="images/defaultPic.jpg" width="400">
+        <% }
+          else{ %>
+          <img id="profile-pic" class="about-me-pic" width="200px" height="200px" src="<%= user.profilePicURL %>" width="400">
+        <% } %>
+
         <p> Last updated on <%= user.lastUpdate %> </p>
 
     <!-- edit out for now <a class="btn btn-primary" href="/choose" role="button">Choose Interest</a><hr>-->
