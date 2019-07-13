@@ -2,7 +2,7 @@
 <%- include('menubar') -%>
     <div class="jumbotron">
 
-        <img class="about-me-pic" src="<%= user.profilePicURL%>" width="400">
+        <img src="<%= user.profilePicURL%>" width="400">
 
         <br>
 
@@ -17,10 +17,7 @@
         <table class="table table-striped table-bordered  bordercolor="color">
           <thead class="bg-dark">
 
-
-
               <th colspan="2" id="label" class="text-light"><%= user.googlename %> (<%= user.googleemail %>)</th>
-
 
           </thead>
           <tbody>
@@ -65,4 +62,5 @@
 
     </div>
 
+<%- include('footer') -%>
 <%- include('bootfooter') -%>
