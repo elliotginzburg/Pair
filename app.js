@@ -9,22 +9,18 @@ var logger = require('morgan');
 // AUTHENTICATION MODULES
 session = require("express-session"),
 bodyParser = require("body-parser"),
-User = require( './models/User' ),
 flash = require('connect-flash')
 // END OF AUTHENTICATION MODULES
 
 const mongoose = require( 'mongoose' );
-
-
-// https://obscure-cliffs-65103.herokuapp.com/
-//website Link
+const MONGOLAB_GOLD_URI = 'mongodb://heroku_14n0lj90:9oh7veboks1o4up0ovnk03m104@ds243607.mlab.com:43607/heroku_14n0lj90'
 
 var uristring =
-    process.env.MONGOLAB_URI ||
+    process.env.MONGOLAB_GOLD_URI ||
     process.env.MONGOHQ_URL ||
-    // pick localhost or heroku
-    'mongodb://localhost/mydb';
-    //'mongodb://heroku_1mh6jvp2:mggno2vrjh2036n5tf58ppqh7t@ds247637.mlab.com:47637/heroku_1mh6jvp2';
+    // pick localhost or mlab
+    //'mongodb://localhost/mydb';
+    'mongodb://heroku_1mh6jvp2:mggno2vrjh2036n5tf58ppqh7t@ds247637.mlab.com:47637/heroku_1mh6jvp2';
 
     // Makes connection asynchronously.  Mongoose will queue up database
     // operations and release them when the connection is complete.
@@ -35,6 +31,9 @@ var uristring =
       console.log ('Succeeded connected to: ' + uristring);
       }
     });
+
+
+//mongoose.connect( 'mongodb://localhost/mydb', { useNewUrlParser: true } );
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -47,6 +46,7 @@ const profileController = require('./controllers/profileController')
 const forumPostController = require('./controllers/forumPostController')
 const quiz2Controller = require('./controllers/quiz2Controller')
 const pairsController = require('./controllers/pairsController')
+const chatController=require("./controllers/chatController")
 // Authentication
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 // here we set up authentication with passport
@@ -164,10 +164,27 @@ app.get('/choose', function(req, res) {
 
 
 
-// we require them to be logged in to see their profile
-app.get('/Jai',function(req, res) {
-        res.render('Jai')
+// we require thowoem to be logged in to see their profile
+
+app.get('/showChat/:user1/:user2',
+        chatController.addPosts,
+        function(req, res) {
+           res.render('showChat')
 });
+
+app.post('/showChat/:user1/:user2',
+        chatController.savePost)
+
+app.get('/resetDB',(req,res)=>{
+  // this deletes all of the documents in all collections
+  require('./models/Chat').deleteMany({}).exec()
+  require('./models/Comment').deleteMany({}).exec()
+  require('./models/ForumComment').deleteMany({}).exec()
+  require('./models/ForumPost').deleteMany({}).exec()
+  require('./models/MovieRating').deleteMany({}).exec()
+  require('./models/User').deleteMany({}).exec()
+  res.redirect('/')
+})
 
 app.get('/yourpairs', pairsController.attachTopFive,
     function(req, res) {
@@ -200,6 +217,10 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
 app.get('/chat',isLoggedIn, (req,res)=>{
   res.render('chat')
 })
+app.get('/location', isLoggedIn, function(req, res) {
+        res.render('location')
+});
+
 
 app.get('/interests', (req,res)=>{
   res.render('interests')

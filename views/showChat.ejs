@@ -1,0 +1,40 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+    <div class="jumbotron">
+      <h1>Chat</h1>
+      <form method="post" action="/showChat/<%= user1 %>/<%= user2 %>">
+          <textarea name="post"  cols="100%"></textarea><br>
+          <input class="btn btn-sm btn-primary" type="submit" value="Add Comment">
+      </form>
+      <br><br><br>
+      <h1> Chat with </h1>
+      <h2>posts!!</h2>
+      <ul>
+      <% console.log("in forumPost.ejs with posts.length ="+posts.length) %>
+      <% for(i = 0; i<= posts.length-1; i++){  %>
+          <li> <a href="/showComment/<%= posts[i]._id %>"> i = <%= i %>
+                <b>
+                    <%= posts[i].email %>
+                </b>
+                <i>
+                     <%= posts[i].createdAt %>
+                </i>
+                <br>
+
+               <pre>...<%= posts[i].post %></pre>
+           </li>
+      <% } %>
+      </ul>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+<%- include('bootfooter') -%>
