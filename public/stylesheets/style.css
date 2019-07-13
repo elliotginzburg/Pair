@@ -57,9 +57,10 @@ a.footerlink{
 }
 
 div.footer-class{
-  margin-top: 30px;
-  margin-bottom: 30px;
   position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px
 }
 
 /* body{
