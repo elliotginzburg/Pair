@@ -10,6 +10,7 @@ var userSchema = Schema( {
   googletoken: String,
   googlename:String,
   googleemail:String,
+  googlepicture:String,
   description: String,
   profilePicURL: String,
   lastUpdate: Date,

@@ -5,7 +5,8 @@
       <div class="row">
         <div class="col-lg-3">
 
-          <% if( user.profilePicURL == ""){ %>
+          <% console.log(user.googlepicture) %>
+          <% if( user.profilePicURL == "" || user.profilePicURL == "undefined"){ %>
             <img id="profile-pic" class="about-me-pic" width="200px" height="200px" src="images/defaultPic.jpg" width="400">
           <% }
             else{ %>

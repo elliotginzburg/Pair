@@ -68,6 +68,7 @@ module.exports = function(passport) {
                           googletoken: token,
                           googlename:profile.displayName,
                           googleemail:profile.emails[0].value,
+                          googlepicture:profile.picture
                         });
 
                     // set all of the relevant information

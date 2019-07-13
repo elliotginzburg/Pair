@@ -3,7 +3,10 @@
     <div class="jumbotron">
         <h1>Pair Profile for <label class="text-primary"><%= user.googlename %></label></h1>
 
-        <% if( user.profilePicURL == ""){ %>
+        <% console.log(user.profilePicURL) %>
+        <% console.log(user.profilePicURL == null) %>
+
+        <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
           <img id="profile-pic" class="about-me-pic" width="200px" height="200px" src="images/defaultPic.jpg" width="400">
         <% }
           else{ %>
