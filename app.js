@@ -170,6 +170,8 @@ app.get('/showChat/:user1/:user2',
         chatController.addPosts,
         function(req, res) {
            res.render('showChat')
+
+
 });
 
 app.post('/showChat/:user1/:user2',
