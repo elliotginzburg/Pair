@@ -177,7 +177,8 @@ app.get('/showChat/:user1/:user2',
 app.post('/showChat/:user1/:user2',
         chatController.savePost)
 
-app.get('/resetDB',(req,res)=>{
+//Uncomment this allow database reset
+/*app.get('/resetDB',(req,res)=>{
   // this deletes all of the documents in all collections
   require('./models/Chat').deleteMany({}).exec()
   require('./models/Comment').deleteMany({}).exec()
@@ -186,7 +187,7 @@ app.get('/resetDB',(req,res)=>{
   require('./models/MovieRating').deleteMany({}).exec()
   require('./models/User').deleteMany({}).exec()
   res.redirect('/')
-})
+})*/
 
 app.get('/yourpairs', pairsController.attachTopFive,
     function(req, res) {
