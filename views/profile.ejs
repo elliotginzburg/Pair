@@ -5,8 +5,8 @@
       <div class="row">
         <div class="col-lg-3">
 
-          <% console.log(user.googlepicture) %>
-          <% if( user.profilePicURL == "" || user.profilePicURL == "undefined"){ %>
+
+          <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
             <img id="profile-pic" class="about-me-pic" width="200px" height="200px" src="images/defaultPic.jpg" width="400">
           <% }
             else{ %>
@@ -64,7 +64,10 @@
         </div>
 
         <hr>
-         <p> Last updated on <%= user.lastUpdate %> </p>
+
+        <% if( user.lastUpdate != null){ %>
+          <p> Last updated on <%= user.lastUpdate %> </p>
+        <% } %>
 
 <br>
   <a class="btn btn-primary btn-block" href="/editProfile" role="button">Edit Profile</a>

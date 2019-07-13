@@ -3,8 +3,9 @@
     <div class="jumbotron">
         <h1>Pair Profile for <label class="text-primary"><%= user.googlename %></label></h1>
 
-        <% console.log(user.profilePicURL) %>
-        <% console.log(user.profilePicURL == null) %>
+        <% if( user.lastUpdate != null){ %>
+          <p> Last updated on <%= user.lastUpdate %> </p>
+        <% } %>
 
         <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
           <img id="profile-pic" class="about-me-pic" width="200px" height="200px" src="images/defaultPic.jpg" width="400">
@@ -13,12 +14,18 @@
           <img id="profile-pic" class="about-me-pic" width="200px" height="200px" src="<%= user.profilePicURL %>" width="400">
         <% } %>
 
-        <p> Last updated on <%= user.lastUpdate %> </p>
+
+
 
     <!-- edit out for now <a class="btn btn-primary" href="/choose" role="button">Choose Interest</a><hr>-->
 
         <form method="post" action="/updateProfile" style="min-height:100%; position:relative;">
 
+          <div class="form-group">
+            <label for="urlSelector">Edit Your Profile Picture</label>
+            <input placeholder="Enter URL" id="urlSelector" class="form-control" type="text" name="profilePicURL" value="<%= user.profilePicURL %>" aria-describedby="urlHelp">
+            <small id="urlHelp" class="form-text text-muted">Right click on the picture and "Copy Image URL".</small>
+          </div>
 
               <div class="row">
                 <div class="col">
@@ -73,11 +80,7 @@
               <small id="ageHelp" class="form-text text-muted">You must be 16 to sign up.</small>
             </div>
 
-            <div class="form-group">
-              <label for="urlSelector">Enter A Profile Pic URL</label>
-              <input placeholder="Enter URL" id="urlSelector" class="form-control" type="text" name="profilePicURL" value="<%= user.profilePicURL %>" aria-describedby="urlHelp">
-              <small id="urlHelp" class="form-text text-muted">Right click on the picture and "Copy Image URL".</small>
-            </div>
+
 
             <div class="form-group">
               <label for="addressSelector">Enter Your Address</label>
