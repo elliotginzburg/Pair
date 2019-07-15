@@ -18,6 +18,7 @@ exports.update = ( req, res ) => {
     // take from the form and put into user
     p.age = req.body.age
     p.profilePicURL = req.body.profilePicURL
+    p.profilePic = req.body.profilePic
     p.address = req.body.address
     p.bio = req.body.bio
     p.lastUpdate = new Date()
