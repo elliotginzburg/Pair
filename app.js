@@ -194,6 +194,13 @@ app.get('/yourpairs', pairsController.attachTopFive,
         res.render('yourpairs')
 });
 
+app.post('/yourpairs',
+    pairsController.refresh,
+    pairsController.attachTopFive,
+    function(req, res) {
+        res.render('yourpairs')
+});
+
 app.get('/simon', function(req, res) {
         res.render('simon',{title: "Simon's Page"})
     });
