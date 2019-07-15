@@ -13,6 +13,7 @@ var userSchema = Schema( {
   googlepicture:String,
   description: String,
   profilePicURL: String,
+  profilePic:String,
   lastUpdate: Date,
   userName: String,
   bio:String,
@@ -27,13 +28,10 @@ var userSchema = Schema( {
   sports: Boolean,
   travel: Boolean,
   diy: Boolean,
-  usedIDs: [Number],
-  declinedIDs: [Number],
-  acceptedIDs: [Number]
-  //list of forbidden ids
-  // forbidden: L Integer
-  //people you have said "chat" to, or hava accepted their request
-  // chatPartners: L Integer
+  theyRequestedIDs: [Number],
+  youRequestedIDs: [Number],
+  theyAcceptedIDs: [Number],
+  youAcceptedIDs: [Number]
 } );
 
 

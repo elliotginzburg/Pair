@@ -22,18 +22,35 @@
         <form method="post" action="/updateProfile" style="min-height:100%; position:relative;">
 
           <div class="form-group">
+
+               <label for="exampleFormControlFile1">Upload Profile Picture</label>
+               <input type="file" class="form-control-file" id="urlSelector" value="<%= user.profilePic%>"><br>
+
+
+
+
             <label for="urlSelector">Edit Your Profile Picture</label>
             <input placeholder="Enter URL" id="urlSelector" class="form-control" type="text" name="profilePicURL" value="<%= user.profilePicURL %>" aria-describedby="urlHelp">
             <small id="urlHelp" class="form-text text-muted">Right click on the picture and "Copy Image URL".</small>
           </div>
 
               <div class="row">
+
+
+
+
                 <div class="col">
                   <div class="checkbox">
                      <label><input type="checkbox" name="politics" <% if(user.politics){ %> checked <%  } %> >Politics</label>
                         <label for="checkbox"><img class="interest-image" src = "images/politics.jpg"width="300" height="150"></label>
+
                     </div>
                 </div>
+
+
+
+
+
                 <div class="col">
                       <div class="checkbox">
                       <label><input type="checkbox" name="movies" <% if(user.movies){ %> checked <%  } %>>Movies</label>
@@ -53,6 +70,7 @@
                       <label for="sports">
                         <img class="interest-image" src = "images/sports.jpg"width="300" height="150"></label>
                   </div>
+                 <a class="btn btn-primary" href="/choose" role="button">Sports</a>
                 </div>
                 <div class="col">
                     <div class="checkbox" >

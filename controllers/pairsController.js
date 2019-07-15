@@ -1,14 +1,20 @@
 'use strict';
 const User = require( '../models/User' );
 
+exports.refresh = (req, res, next) => {
+  res.locals.limit = req.body.limit;
+
+  next()
+}
+
 
 // this displays all of the skills
 exports.attachTopFive = ( req, res, next ) => {
   //gconsle.log('in getAllSkills')
-  User.find().limit(5)
+  User.find()
     .exec()
     .then( ( users ) => {
-      res.locals.topFive = getTopFive(users, req.user)
+      res.locals.topFive = getTopFive(users, req.user, res.locals.limit || 5)
       res.locals.users = getUsers(users)
       // add declineChat and chatNow functions
       next()
@@ -46,7 +52,7 @@ Step 3: Sort by decending order - number of similar interests
 Step 4: Return only the top 5
 */
 
-function getTopFive(users, user){
+function getTopFive(users, user, limit){
 
   // ----------------------- Step 1 --------------------------//
   var counterArray = [];
@@ -231,7 +237,7 @@ function getTopFive(users, user){
 
   var topFive = [];
 
-  if(counterArray.length < 5){
+  if(counterArray.length < limit){
     for(i = 0; i < counterArray.length; i++){
 
 
@@ -240,12 +246,12 @@ function getTopFive(users, user){
 
       /*if(counterArray[i][1] != 0){
         topFive.push(counterArray[i][0]);*/
-        
+
       }
     }
 
     else{
-      for(i = 0; i < 5; i++){
+      for(i = 0; i < limit; i++){
         if(counterArray[i][2] == true) {
           topFive.push(counterArray[i][0]);
         }
