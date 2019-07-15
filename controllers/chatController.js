@@ -1,7 +1,55 @@
 
 'use strict';
 const Chat = require( '../models/Chat' );
+const User = require('../models/User' );
 
+exports.createChat = ( req, res ) => {
+  req.user.youRequestedIDs.push(req.params.them)
+
+  req.user.save()
+  .then( () => {
+    User.findOne({_id:req.params.them})
+    .then( ( them ) => {
+      them.theyRequestedIDs.push(req.user._id)
+      them.save()
+      .then( () => {
+        res.redirect( `/showChat/${req.user._id}/${req.params.them}` );
+      })
+    })
+  })
+  .catch( error => {
+    res.send( error );
+  } );
+
+}
+
+exports.acceptChat = ( req, res ) => {
+  /*.then( () => {
+    res.redirect( '' );
+  } )
+  .catch( error => {
+    res.send( error );
+  } ); */
+}
+
+exports.declineChat = ( req, res ) => {
+  req.user.theyRequestedIDs.pop(req.params.them)
+  req.user.save()
+
+  .then( () => {
+    User.findOne({_id:req.params.them})
+      .then( ( them ) => {
+          them.youRequestedIDs.pop(req.user._id)
+          them.save()
+          .then( () => {
+              res.redirect( '/forum' );
+            } )
+      } )
+  } )
+  .catch( error => {
+    res.send( error );
+  } );
+}
 
 exports.savePost = ( req, res ) => {
   //console.log("in saveSkill!")
@@ -70,6 +118,7 @@ function pushToUsed(/* users ,*/ user1ID , user2ID ){
   // from the rest of the code
 
  // just for testing
+ /*
   console.log("User 1: " + user1ID)
   console.log("User 2: " + user2ID)
 
@@ -82,7 +131,5 @@ function pushToUsed(/* users ,*/ user1ID , user2ID ){
       users[i].usedIDs.push(req.params.user2)
 
     }
+    */
   }
-
-
-}

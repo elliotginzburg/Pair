@@ -1,6 +1,7 @@
 'use strict';
 const ForumPost = require( '../models/ForumPost' );
 const ForumComment = require( '../models/ForumComment' );
+const User = require( '../models/User' );
 
 exports.saveForumPost = ( req, res ) => {
   //console.log("in saveSkill!")
@@ -37,6 +38,22 @@ exports.getAllForumPosts = ( req, res, next ) => {
     .exec()
     .then( ( posts ) => {
       res.render('forum',{posts:posts,title:"Forum"})
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+exports.addAllUsernames = ( req, res, next ) => {
+  User.find({_id: {$in: req.user.theyRequestedIDs}})
+    .exec()
+    .then( ( users ) => {
+      res.locals.users = users
+      next()
     } )
     .catch( ( error ) => {
       console.log( error.message );
