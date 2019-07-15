@@ -10,7 +10,6 @@ exports.savePost = ( req, res ) => {
     return res.send("You must be logged in to post to the forum.")
   }
 
-
   let x =
    {
     user1: req.params.user1,
@@ -27,14 +26,7 @@ exports.savePost = ( req, res ) => {
   newChat.save()
     .then( () => {
 
-
-
-
       res.redirect( '/showChat/'+req.params.user1+'/'+req.params.user2 );
-
-
-
-
 
     } )
     .catch( error => {
