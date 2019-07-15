@@ -13,6 +13,7 @@ var userSchema = Schema( {
   googlepicture:String,
   description: String,
   profilePicURL: String,
+  profilePic:String,
   lastUpdate: Date,
   userName: String,
   bio:String,
