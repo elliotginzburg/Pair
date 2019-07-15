@@ -54,11 +54,12 @@ function getTopFive(users, user){
   // for every user, and every possible forbidden id
   var i;
   var j;
+  var flag = false;
 
   for(i = 0; i < users.length; i++) {
 
     if(user.googlename != users[i].googlename){
-      counterArray.push([ i , 0 ]);
+      counterArray.push([ i , 0, flag]);
     }
 
     /*
@@ -88,9 +89,19 @@ function getTopFive(users, user){
       if(users[counterArray[i][0]].politics){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
+        counterArray[i][2] = true;
       }
     }
-  }
+  } else{
+      for(i = 0; i < counterArray.length; i++){
+
+        if(users[counterArray[i][0]].politics){
+
+          counterArray[i][1] = counterArray[i][1] - 0.5;
+        }
+      }
+    }
+
   if(user.food){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
@@ -98,9 +109,17 @@ function getTopFive(users, user){
       if(users[counterArray[i][0]].food){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
+        counterArray[i][2] = true;
       }
     }
-  }
+  }  else{
+      for(i = 0; i < counterArray.length; i++){
+
+        if(users[counterArray[i][0]].food){
+        }
+      }
+    }
+
   if(user.movies){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
@@ -108,9 +127,19 @@ function getTopFive(users, user){
       if(users[counterArray[i][0]].movies){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
+        counterArray[i][2] = true;
       }
     }
-  }
+  }  else{
+      for(i = 0; i < counterArray.length; i++){
+
+        if(users[counterArray[i][0]].movies){
+
+          counterArray[i][1] = counterArray[i][1] - 0.5;
+        }
+      }
+    }
+
   if(user.sports){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
@@ -118,9 +147,19 @@ function getTopFive(users, user){
       if(users[counterArray[i][0]].sports){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
+        counterArray[i][2] = true;
       }
     }
-  }
+  }  else{
+      for(i = 0; i < counterArray.length; i++){
+
+        if(users[counterArray[i][0]].sports){
+
+          counterArray[i][1] = counterArray[i][1] - 0.5;
+        }
+      }
+    }
+
   if(user.travel){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
@@ -128,9 +167,19 @@ function getTopFive(users, user){
       if(users[counterArray[i][0]].travel){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
+        counterArray[i][2] = true;
       }
     }
-  }
+  }  else{
+      for(i = 0; i < counterArray.length; i++){
+
+        if(users[counterArray[i][0]].travel){
+
+          counterArray[i][1] = counterArray[i][1] - 0.5;
+        }
+      }
+    }
+
   if(user.diy){
     // add to all who also like ...
     for(i = 0; i < counterArray.length; i++){
@@ -138,9 +187,22 @@ function getTopFive(users, user){
       if(users[counterArray[i][0]].diy){
         // add one to the counter side of the 2d array
         counterArray[i][1]++;
+        counterArray[i][2] = true;
       }
     }
-  }
+  }  else{
+      for(i = 0; i < counterArray.length; i++){
+
+        if(users[counterArray[i][0]].diy){
+
+          counterArray[i][1] = counterArray[i][1] - 0.5;
+        }
+      }
+    }
+    for(i = 0; i < counterArray.length; i++){
+      console.log(i + ": " + counterArray[i][1] + counterArray[i][2])
+    }
+
 
 // ----------------------- Step 3 --------------------------//
 
@@ -172,21 +234,23 @@ function getTopFive(users, user){
   if(counterArray.length < 5){
     for(i = 0; i < counterArray.length; i++){
 
-      if(counterArray[i][1] != 0){
-        topFive.push(counterArray[i][0]);
+
+        if(counterArray[i][2] == true)
+          topFive.push(counterArray[i][0]);
+
+      /*if(counterArray[i][1] != 0){
+        topFive.push(counterArray[i][0]);*/
+        
       }
-
     }
-  }
-  else{
-    for(i = 0; i < 5; i++){
 
-      if(counterArray[i][1] != 0){
-        topFive.push(counterArray[i][0]);
+    else{
+      for(i = 0; i < 5; i++){
+        if(counterArray[i][2] == true) {
+          topFive.push(counterArray[i][0]);
+        }
       }
-
     }
-  }
 
   return topFive;
 
