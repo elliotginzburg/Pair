@@ -168,3 +168,12 @@ button.dropdown-toggle{
 
 
 }
+a.meet-up{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 5px black;
+  size: 2px
+
+
+}
