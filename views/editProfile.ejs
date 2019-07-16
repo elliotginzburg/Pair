@@ -15,19 +15,11 @@
         <% } %>
 
 
-
-
     <!-- edit out for now <a class="btn btn-primary" href="/choose" role="button">Choose Interest</a><hr>-->
 
         <form method="post" action="/updateProfile" style="min-height:100%; position:relative;">
 
           <div class="form-group">
-<!--
-               <label for="exampleFormControlFile1">Upload Profile Picture</label>
-               <input type="file" class="form-control-file" id="urlSelector" value="<%= user.profilePic%>"><br>
--->
-
-
 
             <label for="urlSelector">Edit Your Profile Picture</label>
             <input placeholder="Enter URL" id="urlSelector" class="form-control" type="text" name="profilePicURL" value="<%= user.profilePicURL %>" aria-describedby="urlHelp">
@@ -35,9 +27,6 @@
           </div>
 
               <div class="row">
-
-
-
 
                 <div class="col">
                   <div class="checkbox">
