@@ -25,7 +25,7 @@ exports.createChat = ( req, res ) => {
       if((them.youRequestedIDs.indexOf(req.user._id) == -1) &&
          (them.theyRequestedIDs.indexOf(req.user._id) == -1)&&
          (them.youAcceptedIDs.indexOf(req.user._id) == -1) &&
-         (them.user.theyAcceptedIDs.indexOf(req.user._id) == -1) ) {
+         (them.theyAcceptedIDs.indexOf(req.user._id) == -1) ) {
         them.theyRequestedIDs.push(req.user._id)
       }
 
