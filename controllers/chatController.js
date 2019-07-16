@@ -31,8 +31,8 @@ exports.createChat = ( req, res ) => {
 
       them.save()
       .then( () => {
-        
-        res.redirect( `/showChat/${req.user._id}/${req.params.them}/rftgyhujiuhygtfrd` );
+
+        res.redirect( `/showChat/${req.user._id}/${req.params.them}` );
       })
     })
   })
@@ -62,7 +62,7 @@ exports.acceptChat = ( req, res ) => {
         }
         them.save()
           .then( () => {
-              res.redirect( '/forum' );
+              res.redirect( '/forum/rdeftgyhujikojuhygtfr' );
             } )
       } )
   } )
