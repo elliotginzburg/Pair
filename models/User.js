@@ -2,6 +2,7 @@
 'use strict';
 const mongoose = require( 'mongoose' );
 const Schema = mongoose.Schema;
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 //var userSchema = mongoose.Schema( {any:{}})
 
@@ -28,10 +29,10 @@ var userSchema = Schema( {
   sports: Boolean,
   travel: Boolean,
   diy: Boolean,
-  theyRequestedIDs: [Number],
-  youRequestedIDs: [Number],
-  theyAcceptedIDs: [Number],
-  youAcceptedIDs: [Number]
+  theyRequestedIDs: [ObjectId],
+  youRequestedIDs: [ObjectId],
+  theyAcceptedIDs: [ObjectId],
+  youAcceptedIDs: [ObjectId]
 } );
 
 

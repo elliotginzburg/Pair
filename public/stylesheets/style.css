@@ -142,4 +142,12 @@ p#copyright{
   text-align: center;
   top: 50px;
   width: 100%;          /* Footer height */
+  
+button.dropdown-toggle{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 5px grey;
+  size: 2px
+
 }
