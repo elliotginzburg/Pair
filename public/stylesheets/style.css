@@ -49,12 +49,30 @@ img.logo{
 }
 
 a.footerlink{
-  padding-left: 10px;
+  padding-left: 20px;
   padding-right: 10px;
-  padding: 20px;
+  padding: 140px;
   color: black;
   font: 20px "Times New Roman", Times, serif;
 }
+
+a.copyrightlink{
+  padding-left: 100px;
+  padding-right: 0px;
+  padding: 10px;
+  color: black;
+}
+p.copyrighttext{
+  padding-left: 80px;
+  padding-right: 0px;
+  padding: 10px;
+  color: black;
+}
+p.center {
+  text-align: center;
+}
+
+
 
 div.footer-class{
   position: absolute;
@@ -142,12 +160,25 @@ p#copyright{
   text-align: center;
   top: 50px;
   width: 100%;          /* Footer height */
-  
+
+}
+
+
 button.dropdown-toggle{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 30px;
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 10px 10px 5px black;
   size: 2px
+
+
+}
+a.meet-up{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 5px black;
+  size: 2px
+
 
 }
