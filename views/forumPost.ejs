@@ -10,9 +10,7 @@
 <% if (userId.equals(user._id)) { %>
        <input type="checkbox" name="delete" value="<%= post._id %>">
    <% } %>
-   <pre>
-   <%= post.post %>
-   </pre>
+   <pre> <%= post.post %> </pre>
    <form method="post" action="/saveForumComment">
        <input type="hidden" name="postId" value="<%= post._id %>">
        <textarea name="comment"  cols="100%"></textarea><br>
@@ -20,7 +18,7 @@
    </form>
    <br><br><br>
   <h1> Chat with </h1>
-  <iframe src="/showPostComments/<%= post._id%>" height="200" width="100%"></iframe>
+  <iframe src="/showPostComments/<%= post._id %>" height="200" width="100%"></iframe>
 
 
 <%- include('bootfooter') -%>
