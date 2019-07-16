@@ -49,11 +49,24 @@ img.logo{
 }
 
 a.footerlink{
-  padding-left: 10px;
+  padding-left: 20px;
   padding-right: 10px;
-  padding: 20px;
+  padding: 120px;
   color: black;
   font: 20px "Times New Roman", Times, serif;
+}
+
+a.copyrightlink{
+  padding-left: 20px;
+  padding-right: 10px;
+  padding: 0px;
+  color: black;
+}
+a.copyrighttext{
+  padding-left: 20px;
+  padding-right: 10px;
+  padding: 0px;
+  color: black;
 }
 
 div.footer-class{
@@ -142,7 +155,7 @@ p#copyright{
   text-align: center;
   top: 50px;
   width: 100%;          /* Footer height */
-  
+
 button.dropdown-toggle{
   margin-top: 10px;
   margin-bottom: 10px;

@@ -17,7 +17,7 @@
             <tr>
               <th class="text-light" scope="col">#</th>
               <th class="text-light" scope="col">Profile Pic</th>
-              <th class="text-light"scope="col" <a href"/profile></a>>Username</th>
+              <th class="text-light"scope="col">Username</th>
               <th class="text-light"scope="col">Shared Interests</th>
               <th class="text-light"scope="col">Want to Chat?</th>
             </tr>
@@ -49,8 +49,9 @@
                 <td>
 
                   <!-- Confirm of deny button -->
-                  <a  href="/createChat/<%= users[topFive[i]]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</a>
-
+                  <a  href="/showChat/<%= user._id%>/<%= users[topFive[i]]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</a>
+                  <button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button>
+                  <a  href="/showChat/<%= users[topFive[i]]._id %>/<%= user._id%>" class="btn btn-success accept-or-deny" type="button" name="button">Join Chat</a>
                 </td>
               </tr>
 
