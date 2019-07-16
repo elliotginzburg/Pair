@@ -3,15 +3,7 @@
     <div class="jumbotron">
         <h1>Chat with YOUR pairs now!</h1>
 
-  <!--  <form method="post" action="/forum">
-      New Post: <br>
-      <textarea id="post" name="post"></textarea>
-      <br>
-      <input type="submit" class="btn btn-lg btn-primary">
-    </form>
-    <hr>
-   <form method="post" action="/forumDelete">
-        <input type="submit" value="delete marked">-->
+
 
         <table class="table table-bordered table-striped table-sm">
             <thead class="thead-dark">
@@ -46,7 +38,7 @@
                   <a href="/acceptChat/<%= users1[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Accept</a>
                   <a href="/declineChat/<%= users1[i]._id %>" class="btn btn-danger accept-or-deny" type="button" name="button">Decline</a>
                 </td>
-                <br><br>
+
               </tr>
               </tbody>
           </table>
@@ -82,7 +74,7 @@
                </td>
                 <td> <label>You requested to chat with <%= users2[i].googlename %></label> </td>
                 <td> <a href="/acceptChat/<%= users2[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
-                <br><br>
+
               </tr>
           </tbody>
         </table>
@@ -113,14 +105,14 @@
                    </td>
                   <td> <label> Chat with <%= users3[i].googlename %> </label> </td>
                   <td> <a href="/showChat/<%= user._id %>/<%= users3[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
-                </tr> <br><br>
+                </tr>
                 <% } %>
 
                 <%  for(var i = 0; i < users4.length; i++){  %>
                 <tr>
                   <td> <label>Chat with <%= users4[i].googlename %></label> </td>
                   <td><a href="/showChat/<%= users4[i]._id %>/<%= user._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
-                  <br><br>
+
                 </tr>
                   <% } %>
 
@@ -128,7 +120,7 @@
             </tbody>
           </table>
 
-
+          </div>
 
 <%- include('bootfooter') -%>
 <%- include('footer') -%>
