@@ -8,10 +8,10 @@ exports.createChat = ( req, res ) => {
 
 
   if((req.user.youRequestedIDs.indexOf(req.params.them) == -1) &&
-     (req.user.theyRequestedIDs. indexOf(req.params.them) == -1)&&
+     (req.user.theyRequestedIDs.indexOf(req.params.them) == -1)&&
      (req.user.youAcceptedIDs.indexOf(req.params.them) == -1) &&
-     (req.user.theyAcceptedIDs. indexOf(req.params.them) == -1) ) {
-    req.user.youRequestedIDs.push(req.params.them)
+     (req.user.theyAcceptedIDs.indexOf(req.params.them) == -1) ) {
+       req.user.youRequestedIDs.push(req.params.them)
   }
 
 
@@ -19,10 +19,10 @@ exports.createChat = ( req, res ) => {
   .then( () => {
     User.findOne({_id:req.params.them})
     .then( ( them ) => {
-      if((req.user.youRequestedIDs.indexOf(req.params.them) == -1) && 
-         (req.user.theyRequestedIDs. indexOf(req.params.them) == -1)&&
+      if((req.user.youRequestedIDs.indexOf(req.params.them) == -1) &&
+         (req.user.theyRequestedIDs.indexOf(req.params.them) == -1)&&
          (req.user.youAcceptedIDs.indexOf(req.params.them) == -1) &&
-         (req.user.theyAcceptedIDs. indexOf(req.params.them) == -1) ) {
+         (req.user.theyAcceptedIDs.indexOf(req.params.them) == -1) ) {
         them.theyRequestedIDs.push(req.user._id)
       }
 
