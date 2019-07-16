@@ -16,6 +16,7 @@
           <thead class="bg-dark">
             <tr>
               <th class="text-light" scope="col">#</th>
+              <th class="text-light" scope="col">Profile Pic</th>
               <th class="text-light"scope="col">Username</th>
               <th class="text-light"scope="col">Shared Interests</th>
               <th class="text-light"scope="col">Want to Chat?</th>
@@ -28,16 +29,13 @@
 
           <tbody>
 
-
-
-
-
-
             <!-- loops through an array "topFive" of the top five best matches -->
             <%  for(var i = 0; i < topFive.length; i++) {  %>
               <tr>
                 <td><%= i + 1  %></td>
-
+                <td>
+                  <img src="<%= users.profilePicURL %>">
+                </td>
                 <td><%= users[topFive[i]].googlename %></td>
                 <td>
                   <!-- Confirm of deny button -->
@@ -50,16 +48,9 @@
                 </td>
                 <td>
 
-
-
-
-
-
-
                   <!-- Confirm of deny button -->
-                  <a  href="/showChat/<%= user._id%>/<%= users[topFive[i]]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</a>
-                  <button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button>
-                  <a  href="/showChat/<%= users[topFive[i]]._id %>/<%= user._id%>" class="btn btn-success accept-or-deny" type="button" name="button">Join Chat</a>
+                  <a  href="/createChat/<%= users[topFive[i]]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</a>
+
                 </td>
               </tr>
 
@@ -69,9 +60,6 @@
         </table>
 
     </div>
-
-
-
 
 <%- include('bootfooter') -%>
 <%- include('footer') -%>
