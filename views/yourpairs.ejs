@@ -17,7 +17,7 @@
             <tr>
               <th class="text-light" scope="col">#</th>
               <th class="text-light" scope="col">Profile Pic</th>
-              <th class="text-light"scope="col" <a href"/profile></a>>Username</th>
+              <th class="text-light"scope="col" <a href"/profile></a>Username</th>
               <th class="text-light"scope="col">Shared Interests</th>
               <th class="text-light"scope="col">Want to Chat?</th>
             </tr>
@@ -33,10 +33,8 @@
             <%  for(var i = 0; i < topFive.length; i++) {  %>
               <tr>
                 <td><%= i + 1  %></td>
-                <td>
-                  <img src="<%= users.profilePicURL %>">
-                </td>
-                <td><%= users[topFive[i]].googlename %></td>
+                <td> <img width="75px" height="75px" src="<%= user.profilePicURL %>"> </td>
+                <td> <%= users[topFive[i]].googlename %> </td>
                 <td>
                   <!-- Confirm of deny button -->
                   <% if(users[topFive[i]].politics && user.politics ){ %> Politics <% } %>
