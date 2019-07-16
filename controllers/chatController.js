@@ -13,16 +13,19 @@ exports.createChat = ( req, res ) => {
      (req.user.theyAcceptedIDs.indexOf(req.params.them) == -1) ) {
        req.user.youRequestedIDs.push(req.params.them)
   }
+  if(req.user.theyRequestedIDs.indexOf(req.params.them) == 1){
+    res.redirect( `/acceptChat/${req.params.them}` );
+  }
 
 
   req.user.save()
   .then( () => {
     User.findOne({_id:req.params.them})
     .then( ( them ) => {
-      if((req.user.youRequestedIDs.indexOf(req.params.them) == -1) &&
-         (req.user.theyRequestedIDs.indexOf(req.params.them) == -1)&&
-         (req.user.youAcceptedIDs.indexOf(req.params.them) == -1) &&
-         (req.user.theyAcceptedIDs.indexOf(req.params.them) == -1) ) {
+      if((them.youRequestedIDs.indexOf(req.user._id) == -1) &&
+         (them.theyRequestedIDs.indexOf(req.user._id) == -1)&&
+         (them.youAcceptedIDs.indexOf(req.user._id) == -1) &&
+         (them.user.theyAcceptedIDs.indexOf(req.user._id) == -1) ) {
         them.theyRequestedIDs.push(req.user._id)
       }
 
