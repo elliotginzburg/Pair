@@ -7,8 +7,20 @@ exports.createChat = ( req, res ) => {
 
 
 
-  if((req.user.youRequestedIDs.indexOf(req.params.them) == -1) && (req.user.theyRequestedIDs. indexOf(req.params.them) == -1)) {
-    req.user.youRequestedIDs.push(req.params.them)
+  if((req.user.youRequestedIDs.indexOf(req.params.them) == -1) &&
+     (req.user.theyRequestedIDs.indexOf(req.params.them) == -1)&&
+     (req.user.youAcceptedIDs.indexOf(req.params.them) == -1) &&
+     (req.user.theyAcceptedIDs.indexOf(req.params.them) == -1) ) {
+       req.user.youRequestedIDs.push(req.params.them)
+  }
+  if(req.user.theyRequestedIDs.indexOf(req.params.them) >= 0){
+      res.redirect( `/acceptChat/${req.params.them}` );
+  }
+  if(req.user.youAcceptedIDs.indexOf(req.params.them) >= 0){
+      res.redirect( `/showChat/${req.params.them}/${req.user._id}` );
+  }
+  if(req.user.theyAcceptedIDs.indexOf(req.params.them) >= 0){
+      res.redirect( `/showChat/${req.user._id}/${req.params.them}` );
   }
 
 
@@ -16,9 +28,16 @@ exports.createChat = ( req, res ) => {
   .then( () => {
     User.findOne({_id:req.params.them})
     .then( ( them ) => {
-      them.theyRequestedIDs.push(req.user._id)
+      if((them.youRequestedIDs.indexOf(req.user._id) == -1) &&
+         (them.theyRequestedIDs.indexOf(req.user._id) == -1)&&
+         (them.youAcceptedIDs.indexOf(req.user._id) == -1) &&
+         (them.theyAcceptedIDs.indexOf(req.user._id) == -1) ) {
+        them.theyRequestedIDs.push(req.user._id)
+      }
+
       them.save()
       .then( () => {
+
         res.redirect( `/showChat/${req.user._id}/${req.params.them}` );
       })
     })

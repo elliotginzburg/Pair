@@ -1,5 +1,6 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
+  <div class="jumbotron">
 
 <form method="post" action="/updateProfile">
 
@@ -23,8 +24,6 @@
                         <input type="checkbox" name="sports" <% if(user.arsneal){ %> checked <%  } %>>Arsenal<br>
                         </div>
                         </div>
-                        
-
 
                         <div class="dropdown">
                           <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,8 +40,6 @@
 
                                                             </div>
                                                             </div>
-
-
 
                                                             <div class="dropdown">
                                                               <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,12 +71,6 @@
                                                     </div>
                                                     </div>
 
-
-
-
-
-
-
                                                     <div class="dropdown">
                                                       <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         Hockey
@@ -103,7 +94,7 @@
 
 </form>
 
-
+</div>
 
 
 

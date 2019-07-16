@@ -51,23 +51,28 @@ img.logo{
 a.footerlink{
   padding-left: 20px;
   padding-right: 10px;
-  padding: 120px;
+  padding: 140px;
   color: black;
   font: 20px "Times New Roman", Times, serif;
 }
 
 a.copyrightlink{
-  padding-left: 20px;
-  padding-right: 10px;
-  padding: 0px;
+  padding-left: 100px;
+  padding-right: 0px;
+  padding: 10px;
   color: black;
 }
-a.copyrighttext{
-  padding-left: 20px;
-  padding-right: 10px;
-  padding: 0px;
+p.copyrighttext{
+  padding-left: 80px;
+  padding-right: 0px;
+  padding: 10px;
   color: black;
 }
+p.center {
+  text-align: center;
+}
+
+
 
 div.footer-class{
   position: absolute;
@@ -156,11 +161,31 @@ p#copyright{
   top: 50px;
   width: 100%;          /* Footer height */
 
+}
+
+
 button.dropdown-toggle{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 30px;
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 10px 10px 5px black;
   size: 2px
+
+
+}
+a.meet-up{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 5px black;
+  size: 2px
+
+
+}
+
+th{
+
+  color: white;
+  font: 30px
 
 }
