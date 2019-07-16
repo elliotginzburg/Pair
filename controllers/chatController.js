@@ -4,7 +4,13 @@ const Chat = require( '../models/Chat' );
 const User = require('../models/User' );
 
 exports.createChat = ( req, res ) => {
-  req.user.youRequestedIDs.push(req.params.them)
+
+
+
+  if((req.user.youRequestedIDs.indexOf(req.params.them) == -1) && (req.user.theyRequestedIDs. indexOf(req.params.them) == -1)) {
+    req.user.youRequestedIDs.push(req.params.them)
+  }
+
 
   req.user.save()
   .then( () => {
