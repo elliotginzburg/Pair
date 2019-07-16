@@ -16,6 +16,10 @@ img.about-me-pic{
   box-shadow: 10px 10px 5px grey;
 }
 
+img.table-pic{
+  border-radius: 30px;
+}
+
 h5.about-me-text{
   padding-top: 20px;
   padding-left: 0px;
@@ -102,13 +106,6 @@ img.btn{
   size: 2px
 }
 
-img.interest-image{
-  border-radius: 30px;
-  box-shadow: 10px 10px 5px grey;
-  padding: 15px;
-  padding-top: 30px;
-}
-
 th#label{
   text-align: center;
 }
@@ -188,4 +185,30 @@ th{
   color: white;
   font: 30px
 
+}
+
+td.centerButton{
+  text-align: center;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+a.styleButton{
+  /*
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 30px; */
+}
+
+.button {
+  margin-top: 16px;
+  padding: 10px 60px 10px 60px;
+  color: white;
+  border-radius: 30px;
+  margin-left: 0px;
+  margin-right: 0px;
 }

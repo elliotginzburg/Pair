@@ -26,15 +26,15 @@
                 <td> <%= i + 1  %> </td>
                 <td>
                   <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
-                    <img  class="about-me-pic" width="75px" height="75px" src="images/defaultPic.jpg">
+                    <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                   <% }
                     else{ %>
-                    <img  class="about-me-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                    <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
                   <% } %>
 
                 </td>
                 <td> <label><%= users1[i].googlename %> has requested to chat. </label> </td>
-                <td>
+                <td class="centerButton">
                   <a href="/acceptChat/<%= users1[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Accept</a>
                   <a href="/declineChat/<%= users1[i]._id %>" class="btn btn-danger accept-or-deny" type="button" name="button">Decline</a>
                 </td>
@@ -66,14 +66,14 @@
                 <td> <%= i + 1  %> </td>
                 <td>
                   <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
-                  <img  class="about-me-pic" width="75px" height="75px" src="images/defaultPic.jpg">
+                  <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                 <% }
                   else{ %>
-                  <img  class="about-me-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                  <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
                 <% } %>
                </td>
                 <td> <label>You requested to chat with <%= users2[i].googlename %></label> </td>
-                <td> <a href="/acceptChat/<%= users2[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
+                <td  class="centerButton"> <a href="/acceptChat/<%= users2[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
 
               </tr>
           </tbody>
@@ -97,14 +97,14 @@
                   <td> <%= i + 1  %> </td>
                   <td>
                     <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
-                      <img  class="about-me-pic" width="75px" height="75px" src="images/defaultPic.jpg">
+                      <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                     <% }
                       else{ %>
-                      <img  class="about-me-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                      <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
                     <% } %>
                    </td>
                   <td> <label> Chat with <%= users3[i].googlename %> </label> </td>
-                  <td> <a href="/showChat/<%= user._id %>/<%= users3[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
+                  <td  class="centerButton"> <a href="/showChat/<%= user._id %>/<%= users3[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
                 </tr>
                 <% } %>
 
@@ -113,14 +113,14 @@
                   <td> <%= i + 1  %> </td>
                   <td>
                     <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
-                      <img  class="about-me-pic" width="75px" height="75px" src="images/defaultPic.jpg">
+                      <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                     <% }
                       else{ %>
-                      <img  class="about-me-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                      <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
                     <% } %>
                   </td>
                   <td> <label>Chat with <%= users4[i].googlename %></label> </td>
-                  <td><a href="/showChat/<%= users4[i]._id %>/<%= user._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
+                  <td  class="centerButton"><a class="button bg-success" href="/showChat/<%= users4[i]._id %>/<%= user._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
 
                 </tr>
                   <% } %>

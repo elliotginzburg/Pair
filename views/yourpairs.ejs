@@ -15,7 +15,7 @@
             <option value="20">20</option>
           </select>
           <input type="submit">
-          
+
 
         </form>
 
@@ -43,10 +43,10 @@
                 <td>
 
                   <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
-                    <img  class="about-me-pic" width="75px" height="75px" src="images/defaultPic.jpg">
+                    <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                   <% }
                     else{ %>
-                    <img  class="about-me-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                    <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
                   <% } %>
 
                 </td>
