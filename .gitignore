@@ -1,5 +1,5 @@
 .DS_Store
-auth.js
+
 apikey.js
 
 # Logs
@@ -63,3 +63,4 @@ typings/
 
 # next.js build output
 .next
+package-lock.json

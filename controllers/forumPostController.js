@@ -1,6 +1,7 @@
 'use strict';
 const ForumPost = require( '../models/ForumPost' );
 const ForumComment = require( '../models/ForumComment' );
+const User = require( '../models/User' );
 
 exports.saveForumPost = ( req, res ) => {
   //console.log("in saveSkill!")
@@ -37,6 +38,74 @@ exports.getAllForumPosts = ( req, res, next ) => {
     .exec()
     .then( ( posts ) => {
       res.render('forum',{posts:posts,title:"Forum"})
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+exports.addAllUsernames1 = ( req, res, next ) => {
+  console.log('in addAllUsernames')
+  User.find({_id: {$in: req.user.theyRequestedIDs}})
+    .exec()
+    .then( ( users ) => {
+      res.locals.users1 = users
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+exports.addAllUsernames2 = ( req, res, next ) => {
+  console.log('in addAllUsernames')
+  User.find({_id: {$in: req.user.youRequestedIDs}})
+    .exec()
+    .then( ( users ) => {
+      res.locals.users2 = users
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+exports.addAllUsernames3 = ( req, res, next ) => {
+  console.log('in addAllUsernames')
+  User.find({_id: {$in: req.user.theyAcceptedIDs}})
+    .exec()
+    .then( ( users ) => {
+      res.locals.users3 = users
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+exports.addAllUsernames4 = ( req, res, next ) => {
+  console.log('in addAllUsernames')
+  User.find({_id: {$in: req.user.youAcceptedIDs}})
+    .exec()
+    .then( ( users ) => {
+      res.locals.users4 = users
+      next()
     } )
     .catch( ( error ) => {
       console.log( error.message );
