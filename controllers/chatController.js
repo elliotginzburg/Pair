@@ -16,6 +16,12 @@ exports.createChat = ( req, res ) => {
   if(req.user.theyRequestedIDs.indexOf(req.params.them) >= 0){
       res.redirect( `/acceptChat/${req.params.them}` );
   }
+  if(req.user.youAcceptedIDs.indexOf(req.params.them) >= 0){
+      res.redirect( `/showChat/${req.params.them}/${req.user._id}` );
+  }
+  if(req.user.theyAcceptedIDs.indexOf(req.params.them) >= 0){
+      res.redirect( `/showChat/${req.user._id}/${req.params.them}` );
+  }
 
 
   req.user.save()
