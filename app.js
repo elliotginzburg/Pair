@@ -221,9 +221,9 @@ app.get('/chat',(req,res,next)=>{
 
 app.get('/createChat/:them', chatController.createChat)
 
-app.get('/acceptChat/:them', chatController.createChat)
+app.get('/acceptChat/:them', chatController.acceptChat)
 
-app.get('/declineChat/:them', chatController.createChat)
+app.get('/declineChat/:them', chatController.declineChat)
 
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
@@ -270,7 +270,10 @@ app.get('/quiz2',quiz2Controller.getAllMovieRatings)
 
 
 app.get('/forum',
-forumPostController.addAllUsernames,
+forumPostController.addAllUsernames1,
+forumPostController.addAllUsernames2,
+forumPostController.addAllUsernames3,
+forumPostController.addAllUsernames4,
 (req,res)=>{
   res.render('forum',{title:"comments"})
 })

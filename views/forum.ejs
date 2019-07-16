@@ -18,20 +18,60 @@
 
           <% console.log(user.theyRequestedIDs.length)
           if(user.theyRequestedIDs.length > 0) { %>
-              <h2>Your Requests</h2>
+              <h2>Requested You</h2>
           <% } %>
 
 
 
-        <%  for(var i = 0; i < users.length; i++){  %>
+        <%  for(var i = 0; i < users1.length; i++){  %>
             <li>
 
-               <label><%= users[i].googlename %> has requested to chat. </label>
-               <a href="/acceptChat/<%= users[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Accept</a>
-               <a href="/declineChat/<%= users[i]._id %>" class="btn btn-danger accept-or-deny" type="button" name="button">Decline</a>
+               <label><%= users1[i].googlename %> has requested to chat. </label>
+               <a href="/acceptChat/<%= users1[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Accept</a>
+               <a href="/declineChat/<%= users1[i]._id %>" class="btn btn-danger accept-or-deny" type="button" name="button">Decline</a>
                <br><br>
              </li>
         <% } %>
+        </ol>
+
+        <ol>
+
+        <%if(users2.length > 0) { %>
+            <h2>You Requests</h2>
+        <% } %>
+
+        <%  for(var i = 0; i < users2.length; i++){  %>
+            <li>
+
+               <label>You requested to chat with <%= users2[i].googlename %></label>
+               <a href="/acceptChat/<%= users2[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a>
+               <br><br>
+             </li>
+        <% } %>
+
+        </ol>
+
+        <h2>Your Chats</h2>
+
+        <%  for(var i = 0; i < users3.length; i++){  %>
+            <li>
+
+               <label>Chat with <%= users3[i].googlename %> </label>
+               <a href="/showChat/<%= user._id %>/<%= users3[i]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a>
+
+               <br><br>
+             </li>
+        <% } %>
+
+        <%  for(var i = 0; i < users4.length; i++){  %>
+            <li>
+
+               <label>Chat with <%= users4[i].googlename %></label>
+               <a href="/showChat/<%= users4[i]._id %>/<%= user._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a>
+               <br><br>
+             </li>
+        <% } %>
+
         </ol>
 
 

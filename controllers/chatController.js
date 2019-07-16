@@ -24,23 +24,50 @@ exports.createChat = ( req, res ) => {
 }
 
 exports.acceptChat = ( req, res ) => {
-  /*.then( () => {
-    res.redirect( '' );
-  } )
-  .catch( error => {
-    res.send( error );
-  } ); */
-}
 
-exports.declineChat = ( req, res ) => {
-  req.user.theyRequestedIDs.pop(req.params.them)
+  var index = req.user.theyRequestedIDs.indexOf(req.params.them)
+  if(index > -1){
+    req.user.theyRequestedIDs.splice(index, 1)
+    req.user.youAcceptedIDs.push(req.params.them)
+  }
+
   req.user.save()
 
   .then( () => {
     User.findOne({_id:req.params.them})
       .then( ( them ) => {
-          them.youRequestedIDs.pop(req.user._id)
-          them.save()
+        var index = them.youRequestedIDs.indexOf(req.user._id)
+        if(index > -1){
+          them.youRequestedIDs.splice(index, 1)
+          them.theyAcceptedIDs.push(req.user._id)
+        }
+        them.save()
+          .then( () => {
+              res.redirect( '/forum' );
+            } )
+      } )
+  } )
+  .catch( error => {
+    res.send( error );
+  } );
+}
+
+exports.declineChat = ( req, res ) => {
+  var index = req.user.theyRequestedIDs.indexOf(req.params.them)
+  if(index > -1){
+    req.user.theyRequestedIDs.splice(index, 1)
+  }
+
+  req.user.save()
+
+  .then( () => {
+    User.findOne({_id:req.params.them})
+      .then( ( them ) => {
+        var index = them.youRequestedIDs.indexOf(req.user._id)
+        if(index > -1){
+          them.youRequestedIDs.splice(index, 1)
+        }
+        them.save()
           .then( () => {
               res.redirect( '/forum' );
             } )
