@@ -178,6 +178,7 @@ app.post('/showChat/:user1/:user2',
         chatController.savePost)
 
 //Uncomment this allow database reset
+/*
 app.get('/resetDB',(req,res)=>{
   // this deletes all of the documents in all collections
   require('./models/Chat').deleteMany({}).exec()
@@ -187,7 +188,7 @@ app.get('/resetDB',(req,res)=>{
   require('./models/MovieRating').deleteMany({}).exec()
   require('./models/User').deleteMany({}).exec()
   res.redirect('/')
-})
+}) */
 
 app.get('/yourpairs', pairsController.attachTopFive,
     function(req, res) {
