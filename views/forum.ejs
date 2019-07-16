@@ -118,6 +118,15 @@
 
                 <%  for(var i = 0; i < users4.length; i++){  %>
                 <tr>
+                  <td> <%= i + 1  %> </td>
+                  <td>
+                    <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
+                      <img  class="about-me-pic" width="75px" height="75px" src="images/defaultPic.jpg">
+                    <% }
+                      else{ %>
+                      <img  class="about-me-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                    <% } %>
+                  </td>
                   <td> <label>Chat with <%= users4[i].googlename %></label> </td>
                   <td><a href="/showChat/<%= users4[i]._id %>/<%= user._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat</a> </td>
                   <br><br>
