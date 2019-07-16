@@ -19,8 +19,8 @@ var uristring =
     process.env.MONGOLAB_GOLD_URI ||
     process.env.MONGOHQ_URL ||
     // pick localhost or mlab
-    'mongodb://localhost/mydb';
-    //'mongodb://heroku_1mh6jvp2:mggno2vrjh2036n5tf58ppqh7t@ds247637.mlab.com:47637/heroku_1mh6jvp2';
+    //'mongodb://localhost/mydb';
+    'mongodb://heroku_1mh6jvp2:mggno2vrjh2036n5tf58ppqh7t@ds247637.mlab.com:47637/heroku_1mh6jvp2';
 
     // Makes connection asynchronously.  Mongoose will queue up database
     // operations and release them when the connection is complete.
@@ -33,7 +33,7 @@ var uristring =
     });
 
 // for localhost
-mongoose.connect( 'mongodb://localhost/mydb', { useNewUrlParser: true } );
+//mongoose.connect( 'mongodb://localhost/mydb', { useNewUrlParser: true } );
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -178,7 +178,8 @@ app.post('/showChat/:user1/:user2',
         chatController.savePost)
 
 //Uncomment this allow database reset
-/*app.get('/resetDB',(req,res)=>{
+/*
+app.get('/resetDB',(req,res)=>{
   // this deletes all of the documents in all collections
   require('./models/Chat').deleteMany({}).exec()
   require('./models/Comment').deleteMany({}).exec()
@@ -187,7 +188,7 @@ app.post('/showChat/:user1/:user2',
   require('./models/MovieRating').deleteMany({}).exec()
   require('./models/User').deleteMany({}).exec()
   res.redirect('/')
-})*/
+}) */
 
 app.get('/yourpairs', pairsController.attachTopFive,
     function(req, res) {
