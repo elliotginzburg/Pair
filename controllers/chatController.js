@@ -14,7 +14,9 @@ exports.createChat = ( req, res ) => {
        req.user.youRequestedIDs.push(req.params.them)
   }
   if(req.user.theyRequestedIDs.indexOf(req.params.them) == 1){
-    res.redirect( `/acceptChat/${req.params.them}` );
+    .then( () => {
+      res.redirect( `/acceptChat/${req.params.them}` );
+    })
   }
 
 
@@ -62,7 +64,7 @@ exports.acceptChat = ( req, res ) => {
         }
         them.save()
           .then( () => {
-              res.redirect( '/forum/rdeftgyhujikojuhygtfr' );
+              res.redirect( '/forum' );
             } )
       } )
   } )
