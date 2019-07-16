@@ -25,11 +25,11 @@
               <tr>
                 <td> <%= i + 1  %> </td>
                 <td>
-                  <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
+                  <% if( users1[i].profilePicURL == "" || users1[i].profilePicURL == null){ %>
                     <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                   <% }
                     else{ %>
-                    <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                    <img  class="table-pic" width="75px" height="75px" src="<%= users1[i].profilePicURL %>">
                   <% } %>
 
                 </td>
@@ -65,11 +65,11 @@
               <tr>
                 <td> <%= i + 1  %> </td>
                 <td>
-                  <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
+                  <% if( users2[i].profilePicURL == "" || users2[i].profilePicURL == null){ %>
                   <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                 <% }
                   else{ %>
-                  <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                  <img  class="table-pic" width="75px" height="75px" src="<%= users2[i].profilePicURL %>">
                 <% } %>
                </td>
                 <td> <label>You requested to chat with <%= users2[i].googlename %></label> </td>
@@ -96,11 +96,11 @@
                 <tr>
                   <td> <%= i + 1  %> </td>
                   <td>
-                    <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
+                    <% if( users3[i].profilePicURL == "" || users3[i].profilePicURL == null){ %>
                       <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                     <% }
                       else{ %>
-                      <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                      <img  class="table-pic" width="75px" height="75px" src="<%= users3[i].profilePicURL %>">
                     <% } %>
                    </td>
                   <td> <label> Chat with <%= users3[i].googlename %> </label> </td>
@@ -112,11 +112,11 @@
                 <tr>
                   <td> <%= i + 1  %> </td>
                   <td>
-                    <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
+                    <% if( users4[i].profilePicURL == "" || users4[i].profilePicURL == null){ %>
                       <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                     <% }
                       else{ %>
-                      <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                      <img  class="table-pic" width="75px" height="75px" src="<%= users4[i].profilePicURL %>">
                     <% } %>
                   </td>
                   <td> <label>Chat with <%= users4[i].googlename %></label> </td>

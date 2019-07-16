@@ -42,11 +42,11 @@
                 <td><%= i + 1  %></td>
                 <td>
 
-                  <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
+                  <% if( users[topFive[i]].profilePicURL == "" || users[topFive[i]].profilePicURL == null){ %>
                     <img  class="table-pic" width="75px" height="75px" src="images/defaultPic.jpg">
                   <% }
                     else{ %>
-                    <img  class="table-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                    <img  class="table-pic" width="75px" height="75px" src="<%= users[topFive[i]].profilePicURL %>">
                   <% } %>
 
                 </td>
