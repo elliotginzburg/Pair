@@ -31,7 +31,8 @@ exports.createChat = ( req, res ) => {
 
       them.save()
       .then( () => {
-        res.redirect( `/showChat/${req.user._id}/${req.params.them}` );
+        
+        res.redirect( `/showChat/${req.user._id}/${req.params.them}/rftgyhujiuhygtfrd` );
       })
     })
   })
