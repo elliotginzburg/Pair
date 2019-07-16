@@ -39,7 +39,16 @@
             <%  for(var i = 0; i < topFive.length; i++) {  %>
               <tr>
                 <td><%= i + 1  %></td>
-                <td> <img width="75px" height="75px" src="<%= user.profilePicURL %>"> </td>
+                <td>
+
+                  <% if( user.profilePicURL == "" || user.profilePicURL == null){ %>
+                    <img  class="about-me-pic" width="75px" height="75px" src="images/defaultPic.jpg">
+                  <% }
+                    else{ %>
+                    <img  class="about-me-pic" width="75px" height="75px" src="<%= user.profilePicURL %>">
+                  <% } %>
+
+                </td>
                 <td> <%= users[topFive[i]].googlename %> </td>
                 <td>
                   <!-- Confirm of deny button -->
@@ -53,9 +62,8 @@
                 <td>
 
                   <!-- Confirm of deny button -->
-                  <a  href="/showChat/<%= user._id%>/<%= users[topFive[i]]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</a>
-                  <button class="btn btn-danger accept-or-deny" type="button" name="button">Decline</button>
-                  <a  href="/showChat/<%= users[topFive[i]]._id %>/<%= user._id%>" class="btn btn-success accept-or-deny" type="button" name="button">Join Chat</a>
+                  <a  href="/createChat/<%= users[topFive[i]]._id %>" class="btn btn-success accept-or-deny" type="button" name="button">Chat Now</a>
+
                 </td>
               </tr>
 
